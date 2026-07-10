@@ -108,6 +108,23 @@ test("education and portrait identify the verified ITMO program", () => {
   assert.ok(existsSync(`${__dirname}/../assets/lam-sunset-portrait.webp`));
 });
 
+test("education links the QS and ICPC evidence to primary ITMO sources", () => {
+  const html = read("index.html");
+  const css = read("styles.css");
+  const script = read("script.js");
+
+  assert.match(html, /class="education-evidence"/);
+  assert.match(html, /https:\/\/en\.itmo\.ru\/en\/page\/353\/Rankings\.htm/);
+  assert.match(html, /QS #78 worldwide in Computer Science &amp; Information Systems \(2024\)/);
+  assert.match(html, /https:\/\/news\.itmo\.ru\/en\/news\/6682\//);
+  assert.match(html, /world’s only seven-time ACM ICPC champion team/);
+  assert.match(html, /data-i18n="educationQsText"/);
+  assert.match(html, /data-i18n="educationIcpcText"/);
+  assert.match(script, /educationQsText:/);
+  assert.match(script, /educationIcpcText:/);
+  assert.match(css, /\.education-evidence a\s*\{[\s\S]*min-height:\s*44px/);
+});
+
 test("capabilities resolve to their proof cases", () => {
   const html = read("index.html");
   const css = read("styles.css");

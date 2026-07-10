@@ -388,6 +388,36 @@ h1 {
   font: 500 13px/1.5 var(--mono);
 }
 
+.education-evidence {
+  display: grid;
+  gap: 2px;
+  margin-top: 14px;
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+}
+
+.education-evidence a {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid transparent;
+  color: var(--muted);
+  font: 500 12px/1.4 var(--mono);
+  transition: border-color 200ms ease, color 200ms ease;
+}
+
+.education-evidence a > span:first-child {
+  min-width: 0;
+}
+
+.education-evidence a:hover,
+.education-evidence a:focus-visible {
+  border-color: currentColor;
+  color: var(--accent);
+}
+
 .capability-line {
   display: flex;
   flex-wrap: wrap;
