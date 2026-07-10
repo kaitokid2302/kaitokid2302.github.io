@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Senior Backend / System Engineer focused on resilient, high-throughput distributed systems."
+    >
+    <title>Dinh Truong Lam — Senior Backend / System Engineer</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    >
+    <script>
+      try {
+        if (localStorage.getItem("landing-theme") === "dark") {
+          document.documentElement.dataset.theme = "dark";
+        }
+      } catch {}
+    </script>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-i18n="skip">Skip to main content</a>
+
+    <header class="masthead">
+      <a class="wordmark" href="#top" aria-label="Back to top" data-i18n-aria-label="backToTop">
+        <span aria-hidden="true">DL</span>
+        <strong>Dinh Truong Lam</strong>
+      </a>
+
+      <div class="masthead-actions" role="group" aria-label="Theme switcher" data-i18n-aria-label="preferenceControls">
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          data-i18n="menuOpen"
+        >Menu</button>
+
+        <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation" data-i18n-aria-label="primaryNav">
+          <a href="#work" data-i18n="navWork">Work</a>
+          <a href="#principles" data-i18n="navPrinciples">Principles</a>
+          <a href="#contact" data-i18n="navContact">Contact</a>
+        </nav>
+
+        <div class="preference-controls">
+          <button
+            class="theme-toggle"
+            type="button"
+            data-theme-toggle
+            aria-pressed="false"
+            aria-label="Switch to dark mode"
+            title="Switch to dark mode"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M20.3 14.33A7.6 7.6 0 0 1 9.67 3.7 7.62 7.62 0 1 0 20.3 14.33Z"></path>
+            </svg>
+          </button>
+
+          <div class="language-toggle" role="group" aria-label="Language switcher" data-i18n-aria-label="languageSwitcher">
+            <button type="button" data-lang="en" class="is-active" aria-pressed="true">EN</button>
+            <button type="button" data-lang="vi" aria-pressed="false">VI</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section id="top" class="hero">
+        <div class="hero-index" aria-hidden="true">
+          <span>00—01</span>
+          <span data-i18n="heroIndex">Profile</span>
+        </div>
+
+        <div class="hero-copy">
+          <p class="kicker" data-i18n="heroKicker">Senior Backend / System Engineer</p>
+          <h1 data-i18n="heroTitle">I design systems that hold when traffic spikes.</h1>
+          <p class="lede" data-i18n="heroLede">
+            I focus on backend flows with real consequences: traffic distribution, data consistency, resilience when dependencies fail, and observability during release.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#work" data-i18n="heroCta">View selected work</a>
+            <a class="text-link" href="assets/dinh-truong-lam-cv.pdf" download data-i18n="heroCv">Download CV <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+
+        <aside class="hero-aside" aria-label="Profile and education" data-i18n-aria-label="profileAndEducation">
+          <figure class="profile-photo">
+            <img
+              src="assets/lam-sunset-portrait.webp"
+              width="1122"
+              height="1402"
+              alt="Dinh Truong Lam at a lakeside sunset"
+              data-i18n-alt="portraitAlt"
+            >
+          </figure>
+
+          <section class="education-note">
+            <p class="kicker" data-i18n="educationKicker">Education</p>
+            <h2 class="education-title" data-i18n="educationTitle">ITMO University</h2>
+            <a
+              class="school-link"
+              href="https://en.itmo.ru/en/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Visit ITMO University (opens in a new tab)"
+              data-i18n-aria-label="itmoLinkLabel"
+            >
+              <span data-i18n="itmoLinkText">Visit official site</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <p class="education-program" data-i18n="educationProgram">Software Engineering</p>
+            <p class="education-meta" data-i18n="educationMeta">2019—2025 · GPA 3.2 / 4.0</p>
+          </section>
+        </aside>
+      </section>
+
+      <section class="capability-line" aria-label="Technical capabilities" data-i18n-aria-label="capabilityLine">
+        <a href="#case-smart-city" data-case-target="case-smart-city">Kafka</a>
+        <a href="#case-smart-city" data-case-target="case-smart-city">Cassandra</a>
+        <a href="#case-b2b-orders" data-case-target="case-b2b-orders">PostgreSQL</a>
+        <a href="#case-smart-city" data-case-target="case-smart-city">Redis</a>
+        <a href="#case-core-flow" data-case-target="case-core-flow">Grafana</a>
+        <a href="#case-core-flow" data-case-target="case-core-flow">Splunk</a>
+        <a href="#case-core-flow" data-case-target="case-core-flow">Unleash</a>
+      </section>
+
+      <section id="work" class="work">
+        <div class="section-intro">
+          <p class="kicker" data-i18n="workKicker">01 — Selected work</p>
+          <h2 data-i18n="workTitle">Systems told through decisions and outcomes.</h2>
+          <p data-i18n="workIntro">
+            Not a technology list. Each story below is a problem solved through architecture, operation, and explicit trade-offs.
+          </p>
+        </div>
+
+        <div class="case-list">
+          <details id="case-core-flow" class="case" open>
+            <summary>
+              <span class="case-number">01</span>
+              <span class="case-title">
+                <strong data-i18n="case1Title">Core system flow</strong>
+                <small data-i18n="case1Subtitle">Latency and resilience</small>
+              </span>
+              <span class="case-result">300ms → 120ms</span>
+              <span class="case-open" aria-hidden="true">+</span>
+            </summary>
+            <div class="case-detail">
+              <p data-i18n="case1Detail">
+                Replaced per-item RabbitMQ async work with a unified gRPC call, then controlled concurrency, traced distributed flow, and rolled out safely with feature flags.
+              </p>
+              <ul aria-label="Technology stack" data-i18n-aria-label="technologyStack">
+                <li>Java · Vert.x · gRPC</li>
+                <li>Redis · Kafka</li>
+                <li>Grafana · Splunk · Unleash</li>
+              </ul>
+            </div>
+          </details>
+
+          <details id="case-b2b-orders" class="case">
+            <summary>
+              <span class="case-number">02</span>
+              <span class="case-title">
+                <strong data-i18n="case2Title">B2B order management</strong>
+                <small data-i18n="case2Subtitle">Preventing overselling</small>
+              </span>
+              <span class="case-result" data-i18n="case2Result">20K+ orders/day</span>
+              <span class="case-open" aria-hidden="true">+</span>
+            </summary>
+            <div class="case-detail">
+              <p data-i18n="case2Detail">
+                Built Spring Boot services around PostgreSQL locking to preserve transactional consistency under load, then used Circuit Breakers to stop downstream failures from cascading.
+              </p>
+              <ul aria-label="Technology stack" data-i18n-aria-label="technologyStack">
+                <li>Spring Boot</li>
+                <li>PostgreSQL locking</li>
+                <li>Resilience4j</li>
+              </ul>
+            </div>
+          </details>
+
+          <details id="case-smart-city" class="case">
+            <summary>
+              <span class="case-number">03</span>
+              <span class="case-title">
+                <strong data-i18n="case3Title">Smart city data</strong>
+                <small data-i18n="case3Subtitle">Time-series pipeline</small>
+              </span>
+              <span class="case-result" data-i18n="case3Result">15M records/day</span>
+              <span class="case-open" aria-hidden="true">+</span>
+            </summary>
+            <div class="case-detail">
+              <p data-i18n="case3Detail">
+                Designed event-driven ingestion for 50+ IoT stations: Kafka ingestion, MinIO claim-check, append-only Cassandra writes, and cache-aside API reads.
+              </p>
+              <ul aria-label="Technology stack" data-i18n-aria-label="technologyStack">
+                <li>Kafka · MinIO</li>
+                <li>Cassandra · PostgreSQL</li>
+                <li>Redis cache-aside</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section id="principles" class="principles">
+        <p class="kicker" data-i18n="principlesKicker">02 — Working principles</p>
+        <div class="principle-grid">
+          <h2 data-i18n="principlesTitle">A good system does more than work on a normal day.</h2>
+          <ol>
+            <li>
+              <span>01</span>
+              <p><strong data-i18n="principle1Title">Design for failure.</strong> <span data-i18n="principle1Text">Treat degradation, retries, and idempotency as part of the primary flow.</span></p>
+            </li>
+            <li>
+              <span>02</span>
+              <p><strong data-i18n="principle2Title">Measure before optimizing.</strong> <span data-i18n="principle2Text">Start with latency, saturation, and operational signals instead of intuition.</span></p>
+            </li>
+            <li>
+              <span>03</span>
+              <p><strong data-i18n="principle3Title">Roll out with a way back.</strong> <span data-i18n="principle3Text">Use observability, feature flags, and canaries to reduce blast radius.</span></p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="recognition" aria-labelledby="recognition-title">
+        <p class="kicker" data-i18n="recognitionKicker">03 — Foundation</p>
+        <h2 id="recognition-title" data-i18n="recognitionTitle">Algorithmic foundation</h2>
+        <ul>
+          <li><time>2019</time><span>First Prize — Russia Information Technology Olympic</span></li>
+          <li><time>2019</time><span>Bronze Medal — Vietnam National Olympiad in Informatics</span></li>
+          <li><time>2019</time><span>Third Prize — CodeTour National Programming Contest</span></li>
+          <li><time>2018</time><span>2× Gold Medals — Hung Vuong Summer Camp in Informatics</span></li>
+        </ul>
+      </section>
+
+      <section id="contact" class="contact">
+        <p class="kicker" data-i18n="contactKicker">04 — Contact</p>
+        <h2 data-i18n="contactTitle">Have a hard backend problem? Start with the architecture.</h2>
+        <div class="contact-actions">
+          <a class="button button-primary" href="mailto:dinhtruonglam001@gmail.com" data-i18n="contactEmail">Email me</a>
+          <button class="text-link copy-email" type="button" data-email="dinhtruonglam001@gmail.com" data-i18n="copyEmail">Copy email</button>
+          <span class="copy-status" aria-live="polite"></span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 Dinh Truong Lam</span>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/dinhtruonglam2001/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+        <a href="https://www.facebook.com/mra2322001/" target="_blank" rel="noreferrer">Facebook <span aria-hidden="true">↗</span></a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
