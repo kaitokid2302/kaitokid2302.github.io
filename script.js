@@ -21,7 +21,7 @@ const copy = {
     switchToDark: "Switch to dark mode",
     switchToLight: "Switch to light mode",
     heroIndex: "Profile",
-    heroKicker: "Senior Backend / System Engineer",
+    heroKicker: "Backend Engineer | High-throughput distributed systems",
     heroTitle: "I design systems that hold when traffic spikes.",
     heroLede:
       "I focus on backend flows with real consequences: traffic distribution, data consistency, resilience when dependencies fail, and observability during release.",
@@ -93,7 +93,7 @@ const copy = {
     switchToDark: "Chuyển sang giao diện tối",
     switchToLight: "Chuyển sang giao diện sáng",
     heroIndex: "Hồ sơ",
-    heroKicker: "Senior Backend / System Engineer",
+    heroKicker: "Backend Engineer | Hệ thống phân tán chịu tải cao",
     heroTitle: "Tôi thiết kế những hệ thống vẫn đứng vững khi lưu lượng tăng.",
     heroLede:
       "Tôi tập trung vào các luồng backend có ảnh hưởng thật: phân phối lưu lượng, tính nhất quán dữ liệu, độ bền khi phụ thuộc gặp sự cố và khả năng quan sát khi triển khai.",
