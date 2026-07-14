@@ -135,6 +135,7 @@ test("capabilities resolve to their proof cases", () => {
   assert.match(html, /id="case-smart-city"/);
   assert.match(html, /href="#case-b2b-orders" data-case-target="case-b2b-orders">PostgreSQL/);
   assert.match(html, /href="#case-smart-city" data-case-target="case-smart-city">Kafka/);
+  assert.match(html, /href="#case-core-flow" data-case-target="case-core-flow">RabbitMQ/);
   assert.match(html, /href="#case-core-flow" data-case-target="case-core-flow">Grafana/);
   assert.match(script, /function revealCase\(/);
   assert.match(script, /window\.addEventListener\("hashchange", revealCaseFromHash\)/);

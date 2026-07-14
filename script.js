@@ -48,7 +48,7 @@ const copy = {
     case1Title: "Core system flow",
     case1Subtitle: "Latency and resilience",
     case1Detail:
-      "Replaced per-item RabbitMQ async work with a unified gRPC call, then controlled concurrency, traced distributed flow, and rolled out safely with feature flags.",
+      "At MoMo, replaced per-item RabbitMQ async work with a unified gRPC call, then controlled concurrency, traced distributed flow, and rolled out safely with feature flags.",
     case2Title: "B2B order management",
     case2Subtitle: "Preventing overselling",
     case2Result: "20K+ orders/day",
@@ -120,7 +120,7 @@ const copy = {
     case1Title: "Core system flow",
     case1Subtitle: "Latency và resilience",
     case1Detail:
-      "Thay xử lý RabbitMQ bất đồng bộ theo từng item bằng một gRPC call thống nhất; kiểm soát concurrency, theo dõi luồng phân tán và rollout an toàn với feature flag.",
+      "Tại MoMo, thay xử lý RabbitMQ bất đồng bộ theo từng item bằng một gRPC call thống nhất; kiểm soát concurrency, theo dõi luồng phân tán và rollout an toàn với feature flag.",
     case2Title: "Quản lý đơn hàng B2B",
     case2Subtitle: "Ngăn overselling",
     case2Result: "20K+ đơn/ngày",
