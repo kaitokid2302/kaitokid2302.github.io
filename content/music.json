@@ -1,0 +1,106 @@
+[
+  {
+    "slug": "after-deploy",
+    "title": {
+      "en": "After the deploy",
+      "vi": "Sau khi deploy xong"
+    },
+    "note": {
+      "en": "Loud enough to drown out the alerting channel. Saved for the Fridays that went well.",
+      "vi": "To vừa đủ để át tiếng kênh cảnh báo. Để dành cho những chiều thứ Sáu deploy trót lọt."
+    },
+    "tracks": [
+      {
+        "title": "Mr. Brightside",
+        "artist": "The Killers",
+        "spotify": "https://open.spotify.com/track/3n3Ppam7vgaVa1iaRUc9Lp"
+      },
+      {
+        "title": "Time Is Running Out",
+        "artist": "Muse",
+        "spotify": "https://open.spotify.com/track/2takcwOaAZWiXQijPHIx7B"
+      },
+      {
+        "title": "Bohemian Rhapsody",
+        "artist": "Queen",
+        "spotify": "https://open.spotify.com/track/4u7EnebtmKWzUH433cf5Qv"
+      },
+      {
+        "title": "Hotel California",
+        "artist": "Eagles",
+        "spotify": "https://open.spotify.com/track/40riOy7x9W7GXjyGp4pjAv"
+      },
+      {
+        "title": "Blinding Lights",
+        "artist": "The Weeknd",
+        "spotify": "https://open.spotify.com/track/0VjIjW4GlUZAMYd2vXMi3b"
+      }
+    ]
+  },
+  {
+    "slug": "slow-morning",
+    "title": {
+      "en": "Slow morning",
+      "vi": "Sáng chậm"
+    },
+    "note": {
+      "en": "Coffee, an empty inbox, and no incident to open. The rarest playlist here.",
+      "vi": "Cà phê, hộp thư trống, không có sự cố nào phải mở. Playlist hiếm gặp nhất ở đây."
+    },
+    "tracks": [
+      {
+        "title": "Mad World",
+        "artist": "Gary Jules",
+        "spotify": "https://open.spotify.com/track/3JOVTQ5h8HGFnDdp4VT3MP"
+      },
+      {
+        "title": "Viva La Vida",
+        "artist": "Coldplay",
+        "spotify": "https://open.spotify.com/track/1mea3bSkSGXuIRvnydlB5b"
+      },
+      {
+        "title": "Stairway to Heaven",
+        "artist": "Led Zeppelin",
+        "spotify": "https://open.spotify.com/track/5CQ30WqJwcep0pYcV4AMNc"
+      },
+      {
+        "title": "Shape of You",
+        "artist": "Ed Sheeran",
+        "spotify": "https://open.spotify.com/track/7qiZfU4dY1lWllzX7mPBI3"
+      }
+    ]
+  },
+  {
+    "slug": "borrowed",
+    "title": {
+      "en": "Borrowed from Spotify",
+      "vi": "Mượn của Spotify"
+    },
+    "note": {
+      "en": "Whole playlists, not single tracks — the list accepts either kind of link.",
+      "vi": "Cả playlist chứ không phải từng bài — danh sách nhận được cả hai loại link."
+    },
+    "tracks": [
+      {
+        "title": "Today's Top Hits",
+        "artist": "Spotify",
+        "spotify": "https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M"
+      },
+      {
+        "title": "RapCaviar",
+        "artist": "Spotify",
+        "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX0XUsuxWHRQd"
+      },
+      {
+        "title": "Cruel Summer",
+        "artist": "Taylor Swift",
+        "spotify": "https://open.spotify.com/track/1BxfuPKGuaTgP7aM0Bbdwr"
+      },
+      {
+        "title": "Never Gonna Give You Up",
+        "artist": "Rick Astley",
+        "spotify": "https://open.spotify.com/track/4cOdK2wGLETKBW3PvgPWqT"
+      }
+    ]
+  }
+]

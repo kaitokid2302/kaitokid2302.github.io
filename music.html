@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="Short stories and photographs from life outside the terminal — travel, milestones, and the ordinary evenings in between."
+      content="Playlists that got me through deploys, incidents, and the quiet mornings in between."
     >
-    <title>Stories — Dinh Truong Lam</title>
+    <title>Music — Dinh Truong Lam</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://open.spotify.com">
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap"
       rel="stylesheet"
@@ -24,7 +25,7 @@
     </script>
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body data-title-key="storiesPageTitle" data-description-key="storiesPageDescription">
+  <body data-title-key="musicPageTitle" data-description-key="musicPageDescription">
     <a class="skip-link" href="#main" data-i18n="skip">Skip to main content</a>
 
     <header class="masthead">
@@ -45,8 +46,8 @@
         <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation" data-i18n-aria-label="primaryNav">
           <a href="index.html#work" data-i18n="navWork">Work</a>
           <a href="index.html#principles" data-i18n="navPrinciples">Principles</a>
-          <a href="stories.html" aria-current="page" data-i18n="navStories">Stories</a>
-          <a href="music.html" data-i18n="navMusic">Music</a>
+          <a href="stories.html" data-i18n="navStories">Stories</a>
+          <a href="music.html" aria-current="page" data-i18n="navMusic">Music</a>
           <a href="index.html#contact" data-i18n="navContact">Contact</a>
         </nav>
 
@@ -73,39 +74,50 @@
     </header>
 
     <main id="main" tabindex="-1">
-      <section class="stories" data-stories-index hidden>
+      <section class="music">
         <div class="section-intro">
-          <p class="kicker" data-i18n="storiesKicker">Stories</p>
-          <h2 data-i18n="storiesTitle">Notes from outside the terminal.</h2>
-          <p data-i18n="storiesIntro">
-            Places, milestones, and the ordinary evenings that turned out to matter more than the milestones.
+          <p class="kicker" data-i18n="musicKicker">Music</p>
+          <h2 data-i18n="musicTitle">What was playing while it shipped.</h2>
+          <p data-i18n="musicIntro">
+            Three lists that map onto three moods of this job — the release that went well, the
+            morning with nothing on fire, and everything borrowed from someone else's taste.
           </p>
         </div>
 
-        <ul class="story-list" data-story-list></ul>
-      </section>
+        <div class="music-shell" data-music-shell hidden>
+          <nav class="playlist-tabs" aria-label="Playlists" data-i18n-aria-label="musicTabsLabel" data-playlist-tabs></nav>
 
-      <article class="story" data-story-article hidden>
-        <a class="text-link story-back" href="stories.html" data-i18n="storyBack">← All stories</a>
+          <div class="playlist">
+            <header class="playlist-head">
+              <h3 data-playlist-title></h3>
+              <p class="playlist-note" data-playlist-note></p>
+              <p class="playlist-count kicker" data-playlist-count></p>
+            </header>
 
-        <header class="story-head">
-          <p class="kicker" data-story-meta></p>
-          <h1 data-story-title></h1>
-          <p class="lede" data-story-summary></p>
-        </header>
-
-        <div class="story-body" data-story-body></div>
-      </article>
-
-      <section class="stories story-status" data-story-status hidden>
-        <p class="kicker" data-i18n="storiesKicker">Stories</p>
-        <h2 data-story-status-title></h2>
-        <p class="lede" data-story-status-text></p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="stories.html" data-i18n="storyBackPlain">All stories</a>
+            <ol class="track-list" data-track-list></ol>
+          </div>
         </div>
+
+        <p class="music-status lede" data-music-status hidden></p>
       </section>
     </main>
+
+    <aside class="now-playing" data-player hidden aria-label="Player" data-i18n-aria-label="musicPlayerLabel">
+      <div class="now-playing-inner">
+        <div class="now-playing-frame" data-player-frame></div>
+        <button
+          class="now-playing-close"
+          type="button"
+          data-player-close
+          aria-label="Close player"
+          data-i18n-aria-label="musicPlayerClose"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18"></path>
+          </svg>
+        </button>
+      </div>
+    </aside>
 
     <footer class="footer">
       <span>© 2026 Dinh Truong Lam</span>
@@ -116,6 +128,6 @@
     </footer>
 
     <script src="script.js"></script>
-    <script src="stories.js"></script>
+    <script src="music.js"></script>
   </body>
 </html>

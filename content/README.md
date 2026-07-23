@@ -98,3 +98,78 @@ python3 -m http.server 8765
 ```
 
 Rồi mở `http://localhost:8765/stories.html`.
+
+---
+
+# Cách thêm một playlist nhạc
+
+Sửa đúng một file: `content/music.json`. Không cần build, không cần upload nhạc.
+
+## 1. Lấy link Spotify
+
+Trên app hoặc web Spotify: bấm `...` ở bài/playlist → **Share** → **Copy link**. Ra dạng:
+
+```
+https://open.spotify.com/track/3n3Ppam7vgaVa1iaRUc9Lp?si=abc123
+```
+
+Phần `?si=...` giữ hay bỏ đều được. Nhận cả 4 loại: `track`, `album`, `playlist`, `episode`.
+
+## 2. Thêm vào JSON
+
+```json
+{
+  "slug": "ten-list-khong-dau",
+  "title": { "en": "...", "vi": "..." },
+  "note":  { "en": "...", "vi": "..." },
+  "tracks": [
+    {
+      "title": "Mr. Brightside",
+      "artist": "The Killers",
+      "spotify": "https://open.spotify.com/track/3n3Ppam7vgaVa1iaRUc9Lp"
+    }
+  ]
+}
+```
+
+| Field | Kiểu | Ý nghĩa |
+|---|---|---|
+| `slug` | string, chỉ `a-z 0-9 -` | Định danh list. Dùng cho link chia sẻ `music.html?p=<slug>` |
+| `title`, `note` | song ngữ | Tên và mô tả list. Bắt buộc đủ cả `en` lẫn `vi` |
+| `tracks[].title` | string | Tên bài — **phải tự gõ**, trang không hỏi Spotify để lấy tên |
+| `tracks[].artist` | string | Nghệ sĩ — cũng phải tự gõ |
+| `tracks[].spotify` | URL | Link copy ở bước 1 |
+
+Thứ tự trong mảng chính là thứ tự hiển thị. Playlist đầu tiên là playlist mở sẵn.
+
+## 3. Vì sao phải tự gõ tên bài
+
+Trang **không gọi API Spotify**. Nếu tự lấy tên thì mỗi lần mở trang phải bắn thêm một
+request cho từng bài, chậm và dễ hỏng khi Spotify đổi API. Đổi lại, danh sách hiện ra tức
+thì, và chỉ khi người xem bấm vào một bài thì iframe Spotify mới được tải.
+
+## 4. Điều cần biết trước khi khoe với người khác
+
+**Người chưa đăng nhập Spotify chỉ nghe được 30 giây mỗi bài.** Đây là giới hạn của
+Spotify, không phải lỗi của trang — chính player hiển thị nhãn `Preview`. Ai đã đăng nhập
+Spotify trên trình duyệt đó thì nghe đầy đủ. Không có cách nào lách, kể cả trả tiền.
+
+Iframe do Spotify phục vụ, nên khi người xem bấm phát thì Spotify nhìn thấy họ. Trang chỉ
+tải iframe sau cú bấm đầu tiên, chưa bấm thì chưa gửi gì sang Spotify.
+
+## 5. Kiểm tra trước khi push
+
+```bash
+node --test "tests/*.test.cjs"
+```
+
+Test tự bắt: slug trùng nhau, thiếu bản dịch, thiếu tên bài hoặc nghệ sĩ, link Spotify sai
+định dạng, cùng một link bị lặp trong một list, và `music.js` lỡ trỏ sang host lạ.
+
+Xem thử bằng mắt (phải chạy qua server, mở thẳng file sẽ không nạp được JSON):
+
+```bash
+python3 -m http.server 8765
+```
+
+Rồi mở `http://localhost:8765/music.html`.

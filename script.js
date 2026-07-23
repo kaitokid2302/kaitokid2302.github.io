@@ -11,6 +11,9 @@ const copy = {
     storiesPageTitle: "Stories — Dinh Truong Lam",
     storiesPageDescription:
       "Short stories and photographs from life outside the terminal — travel, milestones, and the ordinary evenings in between.",
+    musicPageTitle: "Music — Dinh Truong Lam",
+    musicPageDescription:
+      "Playlists that got me through deploys, incidents, and the quiet mornings in between.",
     skip: "Skip to main content",
     backToTop: "Back to top",
     backToHome: "Back to home",
@@ -20,6 +23,7 @@ const copy = {
     navWork: "Work",
     navPrinciples: "Principles",
     navStories: "Stories",
+    navMusic: "Music",
     navContact: "Contact",
     preferenceControls: "Theme and language controls",
     languageSwitcher: "Language switcher",
@@ -80,6 +84,13 @@ const copy = {
       "Places, milestones, and the ordinary evenings that turned out to matter more than the milestones.",
     storyBack: "← All stories",
     storyBackPlain: "All stories",
+    musicKicker: "Music",
+    musicTitle: "What was playing while it shipped.",
+    musicIntro:
+      "Three lists that map onto three moods of this job — the release that went well, the morning with nothing on fire, and everything borrowed from someone else's taste.",
+    musicTabsLabel: "Playlists",
+    musicPlayerLabel: "Player",
+    musicPlayerClose: "Close player",
     contactKicker: "04 — Contact",
     contactTitle: "Have a hard backend problem? Start with the architecture.",
     contactEmail: "Email me",
@@ -94,6 +105,9 @@ const copy = {
     storiesPageTitle: "Câu chuyện — Đinh Trường Lãm",
     storiesPageDescription:
       "Những câu chuyện và hình ảnh ngoài màn hình terminal — nơi đã đi qua, những cột mốc, và các buổi chiều rất đỗi bình thường.",
+    musicPageTitle: "Nhạc — Đinh Trường Lãm",
+    musicPageDescription:
+      "Những playlist đi cùng tôi qua các lần deploy, các sự cố, và những buổi sáng yên ắng ở giữa.",
     skip: "Đi tới nội dung chính",
     backToTop: "Về đầu trang",
     backToHome: "Về trang chủ",
@@ -103,6 +117,7 @@ const copy = {
     navWork: "Công việc",
     navPrinciples: "Nguyên tắc",
     navStories: "Câu chuyện",
+    navMusic: "Nhạc",
     navContact: "Liên hệ",
     preferenceControls: "Tuỳ chọn giao diện và ngôn ngữ",
     languageSwitcher: "Chọn ngôn ngữ",
@@ -163,6 +178,13 @@ const copy = {
       "Những nơi từng sống, mấy chuyện vui buồn, và cả những lúc chẳng liên quan gì đến code.",
     storyBack: "← Tất cả câu chuyện",
     storyBackPlain: "Tất cả câu chuyện",
+    musicKicker: "Nhạc",
+    musicTitle: "Những gì đang phát lúc code chạy được.",
+    musicIntro:
+      "Ba danh sách ứng với ba tâm trạng của nghề này — bản release trót lọt, buổi sáng không có gì cháy, và những thứ nghe ké gu người khác.",
+    musicTabsLabel: "Danh sách nhạc",
+    musicPlayerLabel: "Trình phát",
+    musicPlayerClose: "Đóng trình phát",
     contactKicker: "04 — Liên hệ",
     contactTitle: "Có bài toán backend khó? Hãy bắt đầu từ kiến trúc.",
     contactEmail: "Gửi email",

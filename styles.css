@@ -1123,3 +1123,333 @@ h2 {
     animation-iteration-count: 1 !important;
   }
 }
+
+/* ---------- Music ---------- */
+
+.music {
+  padding: 96px 0 144px;
+}
+
+.music-shell {
+  display: grid;
+  border-top: 2px solid var(--ink);
+  gap: 56px;
+  grid-template-columns: 240px minmax(0, 1fr);
+  padding-top: 56px;
+}
+
+.playlist-tabs {
+  display: flex;
+  position: sticky;
+  top: 32px;
+  align-self: start;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.playlist-tab {
+  display: grid;
+  align-items: baseline;
+  padding: 12px 14px;
+  border: 0;
+  border-left: 2px solid var(--line);
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: var(--body);
+  font-size: 16px;
+  gap: 12px;
+  grid-template-columns: 26px minmax(0, 1fr);
+  text-align: left;
+  transition: color 200ms ease, border-color 200ms ease, background 200ms ease;
+}
+
+.playlist-tab:hover,
+.playlist-tab:focus-visible {
+  background: var(--soft);
+  color: var(--ink);
+}
+
+.playlist-tab[aria-pressed="true"] {
+  border-left-color: var(--accent);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.playlist-tab-index {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 12px;
+}
+
+.playlist-head {
+  padding-bottom: 32px;
+}
+
+.playlist-head h3 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(28px, 3.4vw, 40px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.playlist-note {
+  max-width: 52ch;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.playlist-count {
+  margin: 18px 0 0;
+}
+
+.track-list {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+
+.track {
+  border-bottom: 1px solid var(--line);
+}
+
+.track-button {
+  display: grid;
+  width: 100%;
+  align-items: center;
+  padding: 18px 12px 18px 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  font-family: var(--body);
+  gap: 20px;
+  grid-template-columns: 34px minmax(0, 1fr) auto 20px;
+  text-align: left;
+  transition: padding-left 200ms ease, background 200ms ease;
+}
+
+.track-button:hover,
+.track-button:focus-visible {
+  background: var(--soft);
+  padding-left: 12px;
+}
+
+.track-index {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+.track-text {
+  display: grid;
+  gap: 3px;
+}
+
+.track-title {
+  overflow: hidden;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.track-artist {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.track-badge:not(:empty) {
+  padding: 3px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Ba vạch equalizer: ẩn lúc thường, hiện khi rê chuột, nhảy khi đang phát. */
+.track-icon {
+  display: flex;
+  height: 16px;
+  align-items: flex-end;
+  gap: 3px;
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.track-icon i {
+  width: 3px;
+  height: 6px;
+  border-radius: 1px;
+  background: var(--muted);
+}
+
+.track-button:hover .track-icon,
+.track-button:focus-visible .track-icon {
+  opacity: 1;
+}
+
+.track.is-playing .track-icon {
+  opacity: 1;
+}
+
+.track.is-playing .track-title {
+  color: var(--accent);
+}
+
+.track.is-playing .track-icon i {
+  animation: equalizer 900ms ease-in-out infinite;
+  background: var(--accent);
+}
+
+.track.is-playing .track-icon i:nth-child(2) {
+  animation-delay: 150ms;
+}
+
+.track.is-playing .track-icon i:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+@keyframes equalizer {
+  0%,
+  100% {
+    height: 5px;
+  }
+  50% {
+    height: 16px;
+  }
+}
+
+.music-status {
+  padding: 64px 0;
+  border-top: 2px solid var(--ink);
+  color: var(--muted);
+}
+
+/* ---------- Sticky Spotify player ---------- */
+
+.now-playing {
+  position: fixed;
+  z-index: 40;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid var(--line);
+  background: var(--paper);
+  box-shadow: 0 -12px 32px rgb(0 0 0 / 12%);
+}
+
+.now-playing-inner {
+  display: flex;
+  max-width: var(--max);
+  align-items: center;
+  padding: 12px 32px;
+  margin: 0 auto;
+  gap: 16px;
+}
+
+.now-playing-frame {
+  min-width: 0;
+  flex: 1;
+}
+
+.now-playing-frame iframe {
+  display: block;
+  width: 100%;
+  height: 152px;
+  border: 0;
+  border-radius: 12px;
+}
+
+.now-playing-close {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 200ms ease, border-color 200ms ease;
+}
+
+.now-playing-close:hover,
+.now-playing-close:focus-visible {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.now-playing-close svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 2;
+}
+
+/* Chừa chỗ để thanh phát không che mất footer. */
+body.has-player .footer {
+  padding-bottom: 188px;
+}
+
+@media (max-width: 900px) {
+  .music-shell {
+    gap: 36px;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .playlist-tabs {
+    position: static;
+    flex-direction: row;
+    margin: 0 -24px;
+    padding: 0 24px 4px;
+    gap: 8px;
+    overflow-x: auto;
+  }
+
+  .playlist-tab {
+    flex: none;
+    border-bottom: 2px solid var(--line);
+    border-left: 0;
+    padding: 10px 12px;
+  }
+
+  .playlist-tab[aria-pressed="true"] {
+    border-bottom-color: var(--accent);
+  }
+}
+
+@media (max-width: 520px) {
+  .music {
+    padding: 64px 0 112px;
+  }
+
+  .track-button {
+    gap: 14px;
+    grid-template-columns: 26px minmax(0, 1fr) auto;
+  }
+
+  .track-icon {
+    display: none;
+  }
+
+  .now-playing-inner {
+    padding: 10px 20px;
+  }
+
+  body.has-player .footer {
+    padding-bottom: 168px;
+  }
+}
