@@ -668,15 +668,16 @@ h2 {
   margin: 0;
   padding: 0;
   border-top: 2px solid var(--ink);
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 56px 40px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-flow: row;
+  gap: 64px 48px;
   padding-top: 56px;
   list-style: none;
 }
 
 .story-card a {
   display: grid;
-  gap: 14px;
+  gap: 16px;
 }
 
 .story-card figure {
@@ -707,7 +708,7 @@ h2 {
 .story-card h3 {
   margin: 0;
   font-family: var(--display);
-  font-size: 27px;
+  font-size: 32px;
   font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.02em;
@@ -722,7 +723,7 @@ h2 {
 .story-card-summary {
   margin: 0;
   color: var(--muted);
-  font-size: 17px;
+  font-size: 18px;
 }
 
 /* Views are swapped with the hidden attribute, so no rule below may set a
@@ -737,6 +738,12 @@ h2 {
 
 .story-back {
   margin-bottom: 48px;
+}
+
+.story-head,
+.story-body {
+  width: min(100%, 760px);
+  margin-inline: auto;
 }
 
 .story-head {
@@ -754,8 +761,7 @@ h2 {
 }
 
 .story-body {
-  max-width: 68ch;
-  margin: 56px 0 0;
+  margin-top: 56px;
 }
 
 .story-body p {
@@ -1008,6 +1014,7 @@ h2 {
   }
 
   .story-list {
+    grid-template-columns: 1fr;
     gap: 44px 28px;
     padding-top: 44px;
   }
@@ -1091,10 +1098,6 @@ h2 {
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
-  }
-
-  .story-list {
-    grid-template-columns: 1fr;
   }
 
   .story-body p {

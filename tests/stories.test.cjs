@@ -172,12 +172,32 @@ test("story photos stay in webp under a per-story folder", () => {
   }
 });
 
-test("story body aligns with the story title instead of centering", () => {
-  const css = read("styles.css");
-  const [, storyBodyRule = ""] = css.match(/\.story-body\s*\{([^}]*)\}/) ?? [];
+test("St Petersburg story uses the original April date", () => {
+  const story = storyIndex.find(({ slug }) => slug === "st-petersburg-evenings");
 
-  assert.match(storyBodyRule, /margin:\s*56px 0 0;/);
-  assert.doesNotMatch(storyBodyRule, /\bauto\b/);
+  assert.equal(story?.date, "2026-04-16");
+});
+
+test("story detail centers the title and body on the same reading column", () => {
+  const css = read("styles.css");
+  const [, readingColumnRule = ""] =
+    css.match(/\.story-head,\s*\.story-body\s*\{([^}]*)\}/) ?? [];
+  const storyBodyRule =
+    [...css.matchAll(/\.story-body\s*\{([^}]*)\}/g)]
+      .map(([, rule]) => rule)
+      .find((rule) => /margin-top/.test(rule)) ?? "";
+
+  assert.match(readingColumnRule, /width:\s*min\(100%,\s*760px\);/);
+  assert.match(readingColumnRule, /margin-inline:\s*auto;/);
+  assert.match(storyBodyRule, /margin-top:\s*56px;/);
+});
+
+test("story cards use a row-first two-column desktop grid", () => {
+  const css = read("styles.css");
+  const [, storyListRule = ""] = css.match(/\.story-list\s*\{([^}]*)\}/) ?? [];
+
+  assert.match(storyListRule, /grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\);/);
+  assert.match(storyListRule, /grid-auto-flow:\s*row;/);
 });
 
 test("embedded video is click-to-load rather than an eager iframe", () => {
