@@ -1,0 +1,13 @@
+{
+  "name": "dtr-analytics",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "schema": "wrangler d1 execute dtr-analytics --remote --file=schema.sql",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^4.113.0"
+  }
+}

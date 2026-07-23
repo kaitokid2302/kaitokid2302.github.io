@@ -325,3 +325,72 @@ copyButton?.addEventListener("click", async () => {
 
 setLanguage(getStoredPreference("landing-language", DEFAULT_LANGUAGE, LANGUAGE_VALUES), false);
 setTheme(getStoredPreference("landing-theme", DEFAULT_THEME, THEME_VALUES), false);
+
+/* Analytics — gửi 1 lượt xem về Cloudflare Worker (worker/src/index.js).
+   Để trống ANALYTICS_ENDPOINT thì toàn bộ khối này không chạy. */
+(function trackVisit() {
+  const ANALYTICS_ENDPOINT = "https://dtr-analytics.mra2322001-raycast-relay.workers.dev";
+
+  if (!ANALYTICS_ENDPOINT || !navigator.sendBeacon) return;
+
+  // Visitor id: trang tự phát UUID rồi nhớ trong localStorage của khách.
+  // Chính xác hơn fingerprint, nhưng mất khi khách xoá dữ liệu duyệt web.
+  function visitorId() {
+    let id = localStorage.getItem("visitor-id");
+
+    if (!id) {
+      id = crypto.randomUUID();
+      localStorage.setItem("visitor-id", id);
+    }
+
+    return id;
+  }
+
+  // Fingerprint: hash các đặc điểm trình duyệt. Dùng để nhận ra khách quay lại
+  // ngay cả khi họ xoá localStorage — nhưng Safari/Brave làm nhiễu nên chỉ đúng ~40-60%.
+  async function fingerprint() {
+    const canvas = document.createElement("canvas");
+    const context = canvas.getContext("2d");
+    context.textBaseline = "top";
+    context.font = "14px Arial";
+    context.fillText("dtr", 2, 2);
+
+    const gl = document.createElement("canvas").getContext("webgl");
+    const debugInfo = gl?.getExtension("WEBGL_debug_renderer_info");
+
+    const raw = [
+      navigator.userAgent,
+      navigator.language,
+      navigator.hardwareConcurrency,
+      `${screen.width}x${screen.height}`,
+      window.devicePixelRatio,
+      Intl.DateTimeFormat().resolvedOptions().timeZone,
+      debugInfo ? gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) : "",
+      canvas.toDataURL(),
+    ].join("|");
+
+    const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(raw));
+
+    return Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, "0"))
+      .join("")
+      .slice(0, 16);
+  }
+
+  (async () => {
+    try {
+      navigator.sendBeacon(
+        ANALYTICS_ENDPOINT,
+        JSON.stringify({
+          vid: visitorId(),
+          fp: await fingerprint(),
+          path: location.pathname,
+          referrer: document.referrer,
+          screen: `${screen.width}x${screen.height}@${window.devicePixelRatio}`,
+          tz: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        })
+      );
+    } catch {
+      /* Đếm lượt hỏng thì kệ, không được để vỡ trang. */
+    }
+  })();
+})();

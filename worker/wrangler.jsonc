@@ -1,0 +1,23 @@
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "dtr-analytics",
+	"main": "src/index.js",
+	"compatibility_date": "2026-07-22",
+	// Bật URL chính .workers.dev, tắt Preview URL (mỗi bản deploy sinh thêm 1 URL công khai — không cần).
+	"workers_dev": true,
+	"preview_urls": false,
+	"observability": {
+		"enabled": true
+	},
+	"d1_databases": [
+		{
+			// Tên biến trong code: env.DB (xem src/index.js)
+			"binding": "DB",
+			"database_name": "dtr-analytics",
+			"database_id": "c7fe1bf2-ff06-4587-86c9-57e8b989516f",
+			// true = `wrangler dev` chạy local nhưng ghi thẳng vào D1 thật trên cloud.
+			// Đổi thành false nếu muốn dev với DB local riêng, không đụng dữ liệu thật.
+			"remote": true
+		}
+	]
+}
