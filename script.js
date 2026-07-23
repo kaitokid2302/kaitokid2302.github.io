@@ -158,9 +158,9 @@ const copy = {
     recognitionKicker: "03 — Nền tảng",
     recognitionTitle: "Thành tích thuật toán",
     storiesKicker: "Câu chuyện",
-    storiesTitle: "Những ghi chép ngoài màn hình terminal.",
+    storiesTitle: "Chuyện bên lề, chuyện đời, chuyện dev.",
     storiesIntro:
-      "Những nơi đã đi qua, những cột mốc, và các buổi chiều bình thường hoá ra lại đáng nhớ hơn cả cột mốc.",
+      "Những nơi từng sống, mấy chuyện vui buồn, và cả những lúc chẳng liên quan gì đến code.",
     storyBack: "← Tất cả câu chuyện",
     storyBackPlain: "Tất cả câu chuyện",
     contactKicker: "04 — Liên hệ",
