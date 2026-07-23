@@ -8,13 +8,18 @@ const copy = {
     pageTitle: "Dinh Truong Lam — Senior Backend / System Engineer",
     pageDescription:
       "Senior Backend / System Engineer focused on resilient, high-throughput distributed systems.",
+    storiesPageTitle: "Stories — Dinh Truong Lam",
+    storiesPageDescription:
+      "Short stories and photographs from life outside the terminal — travel, milestones, and the ordinary evenings in between.",
     skip: "Skip to main content",
     backToTop: "Back to top",
+    backToHome: "Back to home",
     menuOpen: "Menu",
     menuClose: "Close",
     primaryNav: "Primary navigation",
     navWork: "Work",
     navPrinciples: "Principles",
+    navStories: "Stories",
     navContact: "Contact",
     preferenceControls: "Theme and language controls",
     languageSwitcher: "Language switcher",
@@ -69,6 +74,12 @@ const copy = {
     principle3Text: "Use observability, feature flags, and canaries to reduce blast radius.",
     recognitionKicker: "03 — Foundation",
     recognitionTitle: "Algorithmic foundation",
+    storiesKicker: "Stories",
+    storiesTitle: "Notes from outside the terminal.",
+    storiesIntro:
+      "Places, milestones, and the ordinary evenings that turned out to matter more than the milestones.",
+    storyBack: "← All stories",
+    storyBackPlain: "All stories",
     contactKicker: "04 — Contact",
     contactTitle: "Have a hard backend problem? Start with the architecture.",
     contactEmail: "Email me",
@@ -80,13 +91,18 @@ const copy = {
     pageTitle: "Đinh Trường Lãm — Senior Backend / System Engineer",
     pageDescription:
       "Senior Backend / System Engineer tập trung vào hệ thống phân tán chịu tải cao, bền vững và dễ vận hành.",
+    storiesPageTitle: "Câu chuyện — Đinh Trường Lãm",
+    storiesPageDescription:
+      "Những câu chuyện và hình ảnh ngoài màn hình terminal — nơi đã đi qua, những cột mốc, và các buổi chiều rất đỗi bình thường.",
     skip: "Đi tới nội dung chính",
     backToTop: "Về đầu trang",
+    backToHome: "Về trang chủ",
     menuOpen: "Mục lục",
     menuClose: "Đóng",
     primaryNav: "Điều hướng chính",
     navWork: "Công việc",
     navPrinciples: "Nguyên tắc",
+    navStories: "Câu chuyện",
     navContact: "Liên hệ",
     preferenceControls: "Tuỳ chọn giao diện và ngôn ngữ",
     languageSwitcher: "Chọn ngôn ngữ",
@@ -141,6 +157,12 @@ const copy = {
     principle3Text: "Dùng quan sát, feature flag và canary để giảm bán kính rủi ro.",
     recognitionKicker: "03 — Nền tảng",
     recognitionTitle: "Thành tích thuật toán",
+    storiesKicker: "Câu chuyện",
+    storiesTitle: "Những ghi chép ngoài màn hình terminal.",
+    storiesIntro:
+      "Những nơi đã đi qua, những cột mốc, và các buổi chiều bình thường hoá ra lại đáng nhớ hơn cả cột mốc.",
+    storyBack: "← Tất cả câu chuyện",
+    storyBackPlain: "Tất cả câu chuyện",
     contactKicker: "04 — Liên hệ",
     contactTitle: "Có bài toán backend khó? Hãy bắt đầu từ kiến trúc.",
     contactEmail: "Gửi email",
@@ -212,9 +234,14 @@ function setLanguage(language, persist = true) {
   currentLanguage = LANGUAGE_VALUES.includes(language) ? language : DEFAULT_LANGUAGE;
   const dictionary = dictionaryFor();
 
+  // Each page names its own title/description keys on <body>; the landing page
+  // keeps the defaults.
+  const titleKey = document.body.dataset.titleKey ?? "pageTitle";
+  const descriptionKey = document.body.dataset.descriptionKey ?? "pageDescription";
+
   document.documentElement.lang = currentLanguage;
-  document.title = dictionary.pageTitle;
-  document.querySelector("meta[name='description']")?.setAttribute("content", dictionary.pageDescription);
+  document.title = dictionary[titleKey];
+  document.querySelector("meta[name='description']")?.setAttribute("content", dictionary[descriptionKey]);
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.dataset.i18n;
@@ -241,6 +268,8 @@ function setLanguage(language, persist = true) {
   setMenuState(navigation?.classList.contains("is-open") ?? false);
 
   if (persist) setStoredPreference("landing-language", currentLanguage);
+
+  document.dispatchEvent(new CustomEvent("site:language", { detail: { language: currentLanguage } }));
 }
 
 function revealCase(caseId) {

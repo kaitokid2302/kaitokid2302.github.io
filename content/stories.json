@@ -1,0 +1,27 @@
+[
+  {
+    "slug": "st-petersburg-evenings",
+    "date": "2026-07-23",
+    "cover": "assets/stories/st-petersburg-evenings/03-fishing-at-sunset.webp",
+    "title": {
+      "en": "The evenings I said I would never miss",
+      "vi": "Những buổi chiều tôi từng nói sẽ không bao giờ nhớ"
+    },
+    "summary": {
+      "en": "Six years in a city built out of parks, and the running route along the Neva I swore I would not think about again.",
+      "vi": "Sáu năm ở một thành phố toàn công viên, và con đường chạy bộ ven sông Neva mà tôi từng thề sẽ không nghĩ đến nữa."
+    },
+    "place": {
+      "en": "Saint Petersburg, Russia",
+      "vi": "Saint Petersburg, Nga"
+    },
+    "tags": {
+      "en": ["Life"],
+      "vi": ["Đời sống"]
+    },
+    "coverAlt": {
+      "en": "Two people fishing on the embankment of the Neva as the sun sets behind the Lakhta Center",
+      "vi": "Hai người câu cá trên bờ kè sông Neva khi mặt trời lặn sau tháp Lakhta Center"
+    }
+  }
+]

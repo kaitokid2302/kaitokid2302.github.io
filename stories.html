@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Short stories and photographs from life outside the terminal — travel, milestones, and the ordinary evenings in between."
+    >
+    <title>Stories — Dinh Truong Lam</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    >
+    <script>
+      try {
+        if (localStorage.getItem("landing-theme") === "dark") {
+          document.documentElement.dataset.theme = "dark";
+        }
+      } catch {}
+    </script>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body data-title-key="storiesPageTitle" data-description-key="storiesPageDescription">
+    <a class="skip-link" href="#main" data-i18n="skip">Skip to main content</a>
+
+    <header class="masthead">
+      <a class="wordmark" href="index.html" aria-label="Back to home" data-i18n-aria-label="backToHome">
+        <span aria-hidden="true">DL</span>
+        <strong>Dinh Truong Lam</strong>
+      </a>
+
+      <div class="masthead-actions" role="group" aria-label="Theme switcher" data-i18n-aria-label="preferenceControls">
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          data-i18n="menuOpen"
+        >Menu</button>
+
+        <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation" data-i18n-aria-label="primaryNav">
+          <a href="index.html#work" data-i18n="navWork">Work</a>
+          <a href="index.html#principles" data-i18n="navPrinciples">Principles</a>
+          <a href="stories.html" aria-current="page" data-i18n="navStories">Stories</a>
+          <a href="index.html#contact" data-i18n="navContact">Contact</a>
+        </nav>
+
+        <div class="preference-controls">
+          <button
+            class="theme-toggle"
+            type="button"
+            data-theme-toggle
+            aria-pressed="false"
+            aria-label="Switch to dark mode"
+            title="Switch to dark mode"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M20.3 14.33A7.6 7.6 0 0 1 9.67 3.7 7.62 7.62 0 1 0 20.3 14.33Z"></path>
+            </svg>
+          </button>
+
+          <div class="language-toggle" role="group" aria-label="Language switcher" data-i18n-aria-label="languageSwitcher">
+            <button type="button" data-lang="en" class="is-active" aria-pressed="true">EN</button>
+            <button type="button" data-lang="vi" aria-pressed="false">VI</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="stories" data-stories-index hidden>
+        <div class="section-intro">
+          <p class="kicker" data-i18n="storiesKicker">Stories</p>
+          <h2 data-i18n="storiesTitle">Notes from outside the terminal.</h2>
+          <p data-i18n="storiesIntro">
+            Places, milestones, and the ordinary evenings that turned out to matter more than the milestones.
+          </p>
+        </div>
+
+        <ul class="story-list" data-story-list></ul>
+      </section>
+
+      <article class="story" data-story-article hidden>
+        <a class="text-link story-back" href="stories.html" data-i18n="storyBack">← All stories</a>
+
+        <header class="story-head">
+          <p class="kicker" data-story-meta></p>
+          <h1 data-story-title></h1>
+          <p class="lede" data-story-summary></p>
+        </header>
+
+        <div class="story-body" data-story-body></div>
+      </article>
+
+      <section class="stories story-status" data-story-status hidden>
+        <p class="kicker" data-i18n="storiesKicker">Stories</p>
+        <h2 data-story-status-title></h2>
+        <p class="lede" data-story-status-text></p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="stories.html" data-i18n="storyBackPlain">All stories</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 Dinh Truong Lam</span>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/dinhtruonglam2001/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+        <a href="https://www.facebook.com/mra2322001/" target="_blank" rel="noreferrer">Facebook <span aria-hidden="true">↗</span></a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="stories.js"></script>
+  </body>
+</html>
