@@ -61,8 +61,22 @@ async function collect(request, env, headers) {
   return new Response(null, { status: 204, headers });
 }
 
+const authorized = (request, env) =>
+  Boolean(env.STATS_KEY) && request.headers.get("X-Stats-Key") === env.STATS_KEY;
+
+// Xoá sạch bảng visits. Không hoàn tác được — stats.html hỏi xác nhận trước khi gọi.
+async function reset(request, env, headers) {
+  if (!authorized(request, env)) {
+    return Response.json({ error: "Sai key" }, { status: 403, headers });
+  }
+
+  const result = await env.DB.prepare(`DELETE FROM visits`).run();
+
+  return Response.json({ deleted: result.meta?.changes ?? 0 }, { headers });
+}
+
 async function stats(request, env, headers) {
-  if (!env.STATS_KEY || request.headers.get("X-Stats-Key") !== env.STATS_KEY) {
+  if (!authorized(request, env)) {
     return Response.json({ error: "Sai key" }, { status: 403, headers });
   }
 
@@ -154,6 +168,8 @@ export default {
 
     try {
       if (url.pathname === "/stats") return await stats(request, env, headers);
+      if (url.pathname === "/reset" && request.method === "POST")
+        return await reset(request, env, headers);
       if (request.method === "POST") return await collect(request, env, headers);
     } catch (error) {
       return Response.json({ error: String(error) }, { status: 500, headers });
