@@ -172,6 +172,14 @@ test("story photos stay in webp under a per-story folder", () => {
   }
 });
 
+test("story body aligns with the story title instead of centering", () => {
+  const css = read("styles.css");
+  const [, storyBodyRule = ""] = css.match(/\.story-body\s*\{([^}]*)\}/) ?? [];
+
+  assert.match(storyBodyRule, /margin:\s*56px 0 0;/);
+  assert.doesNotMatch(storyBodyRule, /\bauto\b/);
+});
+
 test("embedded video is click-to-load rather than an eager iframe", () => {
   const stories = read("stories.js");
   const css = read("styles.css");
