@@ -198,9 +198,6 @@ const languageButtons = document.querySelectorAll("[data-lang]");
 const themeToggle = document.querySelector("[data-theme-toggle]");
 const menuToggle = document.querySelector(".menu-toggle");
 const navigation = document.querySelector(".primary-nav");
-const copyButton = document.querySelector(".copy-email");
-const copyStatus = document.querySelector(".copy-status");
-const skillLinks = document.querySelectorAll("[data-case-target]");
 
 let currentLanguage = DEFAULT_LANGUAGE;
 let currentTheme = DEFAULT_THEME;
@@ -319,8 +316,11 @@ navigation?.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => setMenuState(false));
 });
 
-skillLinks.forEach((link) => {
-  link.addEventListener("click", () => revealCase(link.dataset.caseTarget));
+// Uỷ quyền cho document: router thay cả thẻ <main>, nên gắn thẳng vào nút bên trong
+// nó sẽ mất tác dụng ngay sau lần chuyển trang đầu tiên.
+document.addEventListener("click", (event) => {
+  const link = event.target.closest("[data-case-target]");
+  if (link) revealCase(link.dataset.caseTarget);
 });
 
 window.addEventListener("hashchange", revealCaseFromHash);
@@ -333,8 +333,12 @@ document.addEventListener("keydown", (event) => {
   menuToggle?.focus();
 });
 
-copyButton?.addEventListener("click", async () => {
+document.addEventListener("click", async (event) => {
+  const copyButton = event.target.closest(".copy-email");
+  if (!copyButton) return;
+
   const dictionary = dictionaryFor();
+  const copyStatus = document.querySelector(".copy-status");
 
   try {
     if (!navigator.clipboard) throw new Error("Clipboard API is unavailable");
@@ -348,12 +352,20 @@ copyButton?.addEventListener("click", async () => {
 setLanguage(getStoredPreference("landing-language", DEFAULT_LANGUAGE, LANGUAGE_VALUES), false);
 setTheme(getStoredPreference("landing-theme", DEFAULT_THEME, THEME_VALUES), false);
 
+// Router thay <main> mà không tải lại trang, nên phải tự dịch lại nhãn của trang mới
+// và đếm thêm một lượt xem.
+document.addEventListener("site:page", () => {
+  setLanguage(currentLanguage, false);
+  revealCaseFromHash();
+  trackVisit();
+});
+
 /* Analytics — gửi 1 lượt xem về Cloudflare Worker (worker/src/index.js).
    Để trống ANALYTICS_ENDPOINT thì toàn bộ khối này không chạy. */
-(function trackVisit() {
+const trackVisit = (function analytics() {
   const ANALYTICS_ENDPOINT = "https://dtr-analytics.mra2322001-raycast-relay.workers.dev";
 
-  if (!ANALYTICS_ENDPOINT || !navigator.sendBeacon) return;
+  if (!ANALYTICS_ENDPOINT || !navigator.sendBeacon) return () => {};
 
   // Visitor id: trang tự phát UUID rồi nhớ trong localStorage của khách.
   // Chính xác hơn fingerprint, nhưng mất khi khách xoá dữ liệu duyệt web.
@@ -370,7 +382,12 @@ setTheme(getStoredPreference("landing-theme", DEFAULT_THEME, THEME_VALUES), fals
 
   // Fingerprint: hash các đặc điểm trình duyệt. Dùng để nhận ra khách quay lại
   // ngay cả khi họ xoá localStorage — nhưng Safari/Brave làm nhiễu nên chỉ đúng ~40-60%.
+  // Tính một lần rồi dùng lại, vì router có thể gọi lại nhiều lần trong một phiên.
+  let cachedFingerprint = null;
+
   async function fingerprint() {
+    if (cachedFingerprint) return cachedFingerprint;
+
     const canvas = document.createElement("canvas");
     const context = canvas.getContext("2d");
     context.textBaseline = "top";
@@ -393,12 +410,16 @@ setTheme(getStoredPreference("landing-theme", DEFAULT_THEME, THEME_VALUES), fals
 
     const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(raw));
 
-    return Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, "0"))
+    cachedFingerprint = Array.from(new Uint8Array(digest), (byte) =>
+      byte.toString(16).padStart(2, "0")
+    )
       .join("")
       .slice(0, 16);
+
+    return cachedFingerprint;
   }
 
-  (async () => {
+  return async function send() {
     try {
       navigator.sendBeacon(
         ANALYTICS_ENDPOINT,
@@ -414,5 +435,7 @@ setTheme(getStoredPreference("landing-theme", DEFAULT_THEME, THEME_VALUES), fals
     } catch {
       /* Đếm lượt hỏng thì kệ, không được để vỡ trang. */
     }
-  })();
+  };
 })();
+
+trackVisit();

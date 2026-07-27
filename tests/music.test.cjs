@@ -77,53 +77,83 @@ test("the music page ships the hooks music.js renders into", () => {
     "data-playlist-note",
     "data-playlist-count",
     "data-playlist-empty",
-    "data-music-status",
-    "data-player",
-    "data-player-frame",
-    "data-player-note",
-    "data-player-close"
+    "data-music-status"
   ]) {
     assert.ok(html.includes(hook), `music.html is missing ${hook}`);
   }
 
   assert.match(html, /<script src="script\.js"><\/script>/);
-  assert.match(html, /<script src="music\.js"><\/script>/);
+  assert.match(html, /<script type="module" src="music\.js"><\/script>/);
   assert.match(html, /data-title-key="musicPageTitle"/);
 });
 
+// Thanh phát nằm ngoài <main> trên cả ba trang, nên router đổi trang không huỷ nó và
+// bài đang nghe chạy tiếp.
+test("every page carries the shared player outside its main", () => {
+  for (const page of ["index.html", "stories.html", "music.html"]) {
+    const html = read(page);
+
+    for (const hook of ["data-player", "data-player-frame", "data-player-note", "data-player-close"]) {
+      assert.ok(html.includes(hook), `${page} is missing ${hook}`);
+    }
+
+    assert.ok(
+      html.indexOf("</main>") < html.indexOf('class="now-playing"'),
+      `${page}: the player must sit outside <main>, or a page swap would destroy it`
+    );
+
+    assert.match(html, /<script type="module" src="player\.js"><\/script>/, page);
+    assert.match(html, /<script type="module" src="router\.js"><\/script>/, page);
+  }
+});
+
 test("pressing a track starts playback instead of only loading the embed", () => {
-  const script = read("music.js");
+  const player = read("player.js");
 
-  assert.match(script, /embed\/iframe-api\/v1/, "the embed controller script must be loaded");
-  assert.match(script, /onSpotifyIframeApiReady/);
-  assert.match(script, /createController\(/);
-  assert.match(script, /\.play\(\)/, "something has to call play()");
-  assert.match(script, /loadUri\(/, "swapping tracks must reuse the open embed");
+  assert.match(player, /embed\/iframe-api\/v1/, "the embed controller script must be loaded");
+  assert.match(player, /onSpotifyIframeApiReady/);
+  assert.match(player, /createController\(/);
+  assert.match(player, /\.play\(\)/, "something has to call play()");
+  assert.match(player, /loadUri\(/, "swapping tracks must reuse the open embed");
 });
 
-test("playback survives tab switches, back, and forward", () => {
-  const script = read("music.js");
+test("playback survives tab switches, page changes, back, and forward", () => {
+  const music = read("music.js");
+  const player = read("player.js");
+  const router = read("router.js");
 
-  assert.match(script, /history\.pushState/, "each playlist needs its own history entry");
-  assert.match(script, /"popstate"/, "back and forward must swap lists without a reload");
-  assert.match(script, /sessionStorage/, "the open track must be restored after a real reload");
+  assert.match(music, /history\.pushState/, "each playlist needs its own history entry");
+  assert.match(music, /"popstate"/, "back and forward must swap lists without a reload");
+  assert.match(player, /sessionStorage/, "the open track must be restored after a real reload");
+
+  assert.match(router, /querySelector\("main"\)/, "only <main> may be swapped");
+  assert.match(router, /replaceWith\(nextMain\)/);
+  assert.match(router, /window\.location\.href = url\.href/, "a failed swap must fall back to a real load");
 });
 
-test("music.js only ever builds Spotify embed urls", () => {
-  const script = read("music.js");
+test("player.js only ever builds Spotify embed urls", () => {
+  const player = read("player.js");
 
-  assert.match(script, /SPOTIFY_ORIGIN = "https:\/\/open\.spotify\.com"/);
-  assert.match(script, /\$\{SPOTIFY_ORIGIN\}\/embed\//);
+  assert.match(player, /SPOTIFY_ORIGIN = "https:\/\/open\.spotify\.com"/);
+  assert.match(player, /\$\{SPOTIFY_ORIGIN\}\/embed\//);
 
   // Bất kỳ host nào khác lọt vào iframe đều là lỗi bảo mật, không phải lỗi hiển thị.
   // Bỏ dấu \ trước đã, vì host trong file được viết dạng regex escape (open\.spotify\.com).
-  const hosts = script.replaceAll("\\", "").match(/https:\/\/[a-z0-9.-]+/g) ?? [];
+  const hosts = player.replaceAll("\\", "").match(/https:\/\/[a-z0-9.-]+/g) ?? [];
   for (const host of hosts) {
     assert.ok(
       host.startsWith("https://open.spotify.com"),
-      `music.js should not reference ${host}`
+      `player.js should not reference ${host}`
     );
   }
+});
+
+// Bài lưu trong sessionStorage vẫn phải đi qua kiểm tra loại và id trước khi vào iframe.
+test("a restored track is validated before it reaches the iframe", () => {
+  const player = read("player.js");
+
+  assert.match(player, /SPOTIFY_TYPES\.includes\(stored\.type\)/);
+  assert.match(player, /SPOTIFY_ID\.test\(stored\.id/);
 });
 
 test("every page links to the music page and both languages name it", () => {

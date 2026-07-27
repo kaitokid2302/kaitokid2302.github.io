@@ -23,12 +23,27 @@ const storyCopy = {
   }
 };
 
-const indexView = document.querySelector("[data-stories-index]");
-const articleView = document.querySelector("[data-story-article]");
-const statusView = document.querySelector("[data-story-status]");
-const listElement = document.querySelector("[data-story-list]");
+let indexView = null;
+let articleView = null;
+let statusView = null;
+let listElement = null;
 
 let activeStory = null;
+
+// Router thay cả thẻ <main>, nên phải tra lại DOM mỗi lần vào trang câu chuyện thay vì
+// giữ tham chiếu từ lần tải đầu.
+function bind() {
+  indexView = document.querySelector("[data-stories-index]");
+  articleView = document.querySelector("[data-story-article]");
+  statusView = document.querySelector("[data-story-status]");
+  listElement = document.querySelector("[data-story-list]");
+
+  return Boolean(indexView);
+}
+
+function onStoriesPage() {
+  return Boolean(indexView?.isConnected);
+}
 
 function activeLanguage() {
   return document.documentElement.lang === "vi" ? "vi" : FALLBACK_LANGUAGE;
@@ -262,6 +277,8 @@ document.addEventListener("click", (event) => {
 });
 
 document.addEventListener("site:language", () => {
+  if (!onStoriesPage()) return;
+
   if (activeStory) {
     renderStory(activeStory).catch(() => showStatus("storyMissingTitle", "storyMissingText"));
     return;
@@ -276,4 +293,10 @@ document.addEventListener("site:language", () => {
   route();
 });
 
-route();
+// Router vừa gắn <main> mới vào: nếu đó là trang câu chuyện thì dựng lại nội dung.
+document.addEventListener("site:page", () => {
+  activeStory = null;
+  if (bind()) route();
+});
+
+if (bind()) route();

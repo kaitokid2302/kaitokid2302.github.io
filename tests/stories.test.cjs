@@ -30,7 +30,7 @@ test("stories page reuses the shared theme, language, and skip-link chrome", () 
   assert.match(stories, /data-lang="en"[^>]*class="is-active"/);
   assert.match(stories, /<main id="main" tabindex="-1">/);
   assert.match(stories, /<script src="script\.js"><\/script>/);
-  assert.match(stories, /<script src="stories\.js"><\/script>/);
+  assert.match(stories, /<script type="module" src="stories\.js"><\/script>/);
 });
 
 test("each page declares which title and description copy it owns", () => {
@@ -137,6 +137,24 @@ test("story bodies are language-suffixed with an English fallback", () => {
 
 // Both files are classic scripts sharing one global scope, so a duplicated
 // top-level name is a SyntaxError that silently kills the whole stories page.
+// Router nạp script của trang khác vào cùng một tài liệu, nên hai file chỉ được phép
+// trùng tên khi chúng là module — module có scope riêng, script thường thì không.
+test("page scripts loaded side by side are modules", () => {
+  for (const page of ["index.html", "stories.html", "music.html"]) {
+    const html = read(page);
+
+    for (const [, src] of html.matchAll(/<script(?: type="module")? src="([^"]+)"><\/script>/g)) {
+      if (src === "script.js") continue;
+
+      assert.match(
+        html,
+        new RegExp(`<script type="module" src="${src.replace(".", "\\.")}">`),
+        `${page}: ${src} must be a module or its top-level names collide after a soft navigation`
+      );
+    }
+  }
+});
+
 test("script.js and stories.js declare no colliding globals", () => {
   const topLevelNames = (file) =>
     new Set(

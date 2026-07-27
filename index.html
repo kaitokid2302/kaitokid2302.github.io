@@ -11,6 +11,7 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://open.spotify.com">
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap"
       rel="stylesheet"
@@ -276,6 +277,26 @@
       </section>
     </main>
 
+    <aside class="now-playing" data-player hidden aria-label="Player" data-i18n-aria-label="musicPlayerLabel">
+      <div class="now-playing-inner">
+        <div class="now-playing-main">
+          <div class="now-playing-frame" data-player-frame></div>
+          <p class="now-playing-note" data-player-note></p>
+        </div>
+        <button
+          class="now-playing-close"
+          type="button"
+          data-player-close
+          aria-label="Close player"
+          data-i18n-aria-label="musicPlayerClose"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18"></path>
+          </svg>
+        </button>
+      </div>
+    </aside>
+
     <footer class="footer">
       <span>© 2026 Dinh Truong Lam</span>
       <div class="footer-links">
@@ -285,5 +306,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script type="module" src="player.js"></script>
+    <script type="module" src="router.js"></script>
   </body>
 </html>
