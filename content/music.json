@@ -1,105 +1,96 @@
 [
   {
-    "slug": "after-deploy",
+    "slug": "good-days",
     "title": {
-      "en": "After the deploy",
-      "vi": "Sau khi deploy xong"
+      "en": "Good days",
+      "vi": "Ngày vui"
     },
     "note": {
-      "en": "Loud enough to drown out the alerting channel. Saved for the Fridays that went well.",
-      "vi": "To vừa đủ để át tiếng kênh cảnh báo. Để dành cho những chiều thứ Sáu deploy trót lọt."
+      "en": "Loud, fast, no ballads. This is what plays when the day goes right.",
+      "vi": "To, nhanh, không ballad. Mở lên khi mọi thứ trong ngày trót lọt."
     },
     "tracks": [
       {
-        "title": "Mr. Brightside",
-        "artist": "The Killers",
-        "spotify": "https://open.spotify.com/track/3n3Ppam7vgaVa1iaRUc9Lp"
+        "title": "Tera",
+        "artist": "Xomu",
+        "spotify": "https://open.spotify.com/track/25kj8hK0axO5hZTa3KRYeZ"
       },
       {
-        "title": "Time Is Running Out",
-        "artist": "Muse",
-        "spotify": "https://open.spotify.com/track/2takcwOaAZWiXQijPHIx7B"
+        "title": "CELEBRATION (Supergirl ver.)",
+        "artist": "LE SSERAFIM",
+        "spotify": "https://open.spotify.com/track/5pi0El2TpqK7SZ4YKk7ccU"
       },
       {
-        "title": "Bohemian Rhapsody",
-        "artist": "Queen",
-        "spotify": "https://open.spotify.com/track/4u7EnebtmKWzUH433cf5Qv"
+        "title": "LUAR",
+        "artist": "LANCELOT, FYU",
+        "spotify": "https://open.spotify.com/track/5Yam6r7SCLeaWk0aBhDlBa"
       },
       {
-        "title": "Hotel California",
-        "artist": "Eagles",
-        "spotify": "https://open.spotify.com/track/40riOy7x9W7GXjyGp4pjAv"
+        "title": "MONTAGEM ALQUIMIA",
+        "artist": "h6itam, n7san7os, Mc Menor Do Alvorada",
+        "spotify": "https://open.spotify.com/track/0Wms5IftbzNzmrAyXx4A33"
       },
       {
-        "title": "Blinding Lights",
-        "artist": "The Weeknd",
-        "spotify": "https://open.spotify.com/track/0VjIjW4GlUZAMYd2vXMi3b"
+        "title": "Loud",
+        "artist": "Behmer, Hilaa",
+        "spotify": "https://open.spotify.com/track/6WiMFrUByWcbDgavZznclj"
+      },
+      {
+        "title": "Cure For Lonely",
+        "artist": "VAMERO, Jost",
+        "spotify": "https://open.spotify.com/track/3z3HSya2rZrlpAmUh2lTl3"
       }
     ]
   },
   {
-    "slug": "slow-morning",
+    "slug": "ordinary-days",
     "title": {
-      "en": "Slow morning",
-      "vi": "Sáng chậm"
+      "en": "Ordinary days",
+      "vi": "Ngày thường"
     },
     "note": {
-      "en": "Coffee, an empty inbox, and no incident to open. The rarest playlist here.",
-      "vi": "Cà phê, hộp thư trống, không có sự cố nào phải mở. Playlist hiếm gặp nhất ở đây."
+      "en": "Most days are ordinary, which makes this the hardest list to pick for.",
+      "vi": "Ngày thường thì nhiều nhất, mà lại khó chọn nhạc nhất."
     },
-    "tracks": [
-      {
-        "title": "Mad World",
-        "artist": "Gary Jules",
-        "spotify": "https://open.spotify.com/track/3JOVTQ5h8HGFnDdp4VT3MP"
-      },
-      {
-        "title": "Viva La Vida",
-        "artist": "Coldplay",
-        "spotify": "https://open.spotify.com/track/1mea3bSkSGXuIRvnydlB5b"
-      },
-      {
-        "title": "Stairway to Heaven",
-        "artist": "Led Zeppelin",
-        "spotify": "https://open.spotify.com/track/5CQ30WqJwcep0pYcV4AMNc"
-      },
-      {
-        "title": "Shape of You",
-        "artist": "Ed Sheeran",
-        "spotify": "https://open.spotify.com/track/7qiZfU4dY1lWllzX7mPBI3"
-      }
-    ]
+    "tracks": []
   },
   {
-    "slug": "borrowed",
+    "slug": "bad-days",
     "title": {
-      "en": "Borrowed from Spotify",
-      "vi": "Mượn của Spotify"
+      "en": "Bad days",
+      "vi": "Ngày buồn"
     },
     "note": {
-      "en": "Whole playlists, not single tracks — the list accepts either kind of link.",
-      "vi": "Cả playlist chứ không phải từng bài — danh sách nhận được cả hai loại link."
+      "en": "Nothing has earned a place here yet.",
+      "vi": "Chưa bài nào lọt được vào đây."
+    },
+    "tracks": []
+  },
+  {
+    "slug": "on-repeat",
+    "title": {
+      "en": "On repeat",
+      "vi": "Cổ điển"
+    },
+    "note": {
+      "en": "Tied to no mood at all. These go on without me thinking about it.",
+      "vi": "Không gắn với tâm trạng nào. Cứ mở là nghe, không vì lý do gì."
     },
     "tracks": [
       {
-        "title": "Today's Top Hits",
-        "artist": "Spotify",
-        "spotify": "https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M"
+        "title": "LUAR",
+        "artist": "LANCELOT, FYU",
+        "spotify": "https://open.spotify.com/track/5Yam6r7SCLeaWk0aBhDlBa"
       },
       {
-        "title": "RapCaviar",
-        "artist": "Spotify",
-        "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX0XUsuxWHRQd"
+        "title": "Loud",
+        "artist": "Behmer, Hilaa",
+        "spotify": "https://open.spotify.com/track/6WiMFrUByWcbDgavZznclj"
       },
       {
-        "title": "Cruel Summer",
-        "artist": "Taylor Swift",
-        "spotify": "https://open.spotify.com/track/1BxfuPKGuaTgP7aM0Bbdwr"
-      },
-      {
-        "title": "Never Gonna Give You Up",
-        "artist": "Rick Astley",
-        "spotify": "https://open.spotify.com/track/4cOdK2wGLETKBW3PvgPWqT"
+        "title": "Cure For Lonely",
+        "artist": "VAMERO, Jost",
+        "spotify": "https://open.spotify.com/track/3z3HSya2rZrlpAmUh2lTl3"
       }
     ]
   }

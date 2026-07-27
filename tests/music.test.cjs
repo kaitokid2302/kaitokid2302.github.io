@@ -32,10 +32,17 @@ test("playlist titles and notes are written in both languages", () => {
   }
 });
 
+test("at least one playlist has something in it", () => {
+  assert.ok(
+    playlists.some((playlist) => playlist.tracks?.length),
+    "the page would render nothing to press"
+  );
+});
+
 test("every track carries a title, an artist, and an embeddable Spotify link", () => {
   for (const playlist of playlists) {
+    // Danh sách rỗng là hợp lệ: tab vẫn hiện, chỉ báo là chưa có bài nào.
     assert.ok(Array.isArray(playlist.tracks), `${playlist.slug}.tracks must be an array`);
-    assert.ok(playlist.tracks.length > 0, `${playlist.slug} needs at least one track`);
 
     for (const track of playlist.tracks) {
       const where = `${playlist.slug} / ${track.title ?? "(no title)"}`;
@@ -69,9 +76,11 @@ test("the music page ships the hooks music.js renders into", () => {
     "data-playlist-title",
     "data-playlist-note",
     "data-playlist-count",
+    "data-playlist-empty",
     "data-music-status",
     "data-player",
     "data-player-frame",
+    "data-player-note",
     "data-player-close"
   ]) {
     assert.ok(html.includes(hook), `music.html is missing ${hook}`);
@@ -82,10 +91,29 @@ test("the music page ships the hooks music.js renders into", () => {
   assert.match(html, /data-title-key="musicPageTitle"/);
 });
 
+test("pressing a track starts playback instead of only loading the embed", () => {
+  const script = read("music.js");
+
+  assert.match(script, /embed\/iframe-api\/v1/, "the embed controller script must be loaded");
+  assert.match(script, /onSpotifyIframeApiReady/);
+  assert.match(script, /createController\(/);
+  assert.match(script, /\.play\(\)/, "something has to call play()");
+  assert.match(script, /loadUri\(/, "swapping tracks must reuse the open embed");
+});
+
+test("playback survives tab switches, back, and forward", () => {
+  const script = read("music.js");
+
+  assert.match(script, /history\.pushState/, "each playlist needs its own history entry");
+  assert.match(script, /"popstate"/, "back and forward must swap lists without a reload");
+  assert.match(script, /sessionStorage/, "the open track must be restored after a real reload");
+});
+
 test("music.js only ever builds Spotify embed urls", () => {
   const script = read("music.js");
 
-  assert.match(script, /open\.spotify\.com\/embed\//);
+  assert.match(script, /SPOTIFY_ORIGIN = "https:\/\/open\.spotify\.com"/);
+  assert.match(script, /\$\{SPOTIFY_ORIGIN\}\/embed\//);
 
   // Bất kỳ host nào khác lọt vào iframe đều là lỗi bảo mật, không phải lỗi hiển thị.
   // Bỏ dấu \ trước đã, vì host trong file được viết dạng regex escape (open\.spotify\.com).

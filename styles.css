@@ -1328,6 +1328,15 @@ h2 {
   }
 }
 
+.playlist-empty {
+  padding: 40px 0;
+  margin: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 17px;
+}
+
 .music-status {
   padding: 64px 0;
   border-top: 2px solid var(--ink);
@@ -1356,9 +1365,21 @@ h2 {
   gap: 16px;
 }
 
-.now-playing-frame {
+.now-playing-main {
   min-width: 0;
   flex: 1;
+}
+
+.now-playing-frame {
+  min-width: 0;
+}
+
+.now-playing-note {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.02em;
 }
 
 .now-playing-frame iframe {
@@ -1401,7 +1422,7 @@ h2 {
 
 /* Chừa chỗ để thanh phát không che mất footer. */
 body.has-player .footer {
-  padding-bottom: 188px;
+  padding-bottom: 212px;
 }
 
 @media (max-width: 900px) {
@@ -1450,6 +1471,6 @@ body.has-player .footer {
   }
 
   body.has-player .footer {
-    padding-bottom: 168px;
+    padding-bottom: 192px;
   }
 }

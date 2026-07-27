@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="Playlists that got me through deploys, incidents, and the quiet mornings in between."
+      content="Playlists sorted by the kind of day: good, ordinary, bad, and the ones on repeat."
     >
     <title>Music — Dinh Truong Lam</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -77,10 +77,9 @@
       <section class="music">
         <div class="section-intro">
           <p class="kicker" data-i18n="musicKicker">Music</p>
-          <h2 data-i18n="musicTitle">What was playing while it shipped.</h2>
+          <h2 data-i18n="musicTitle">What plays on a good day, and on a bad one.</h2>
           <p data-i18n="musicIntro">
-            Three lists that map onto three moods of this job — the release that went well, the
-            morning with nothing on fire, and everything borrowed from someone else's taste.
+            Four lists, sorted by the kind of day it was. Press a track and it starts playing.
           </p>
         </div>
 
@@ -95,6 +94,7 @@
             </header>
 
             <ol class="track-list" data-track-list></ol>
+            <p class="playlist-empty" data-playlist-empty hidden></p>
           </div>
         </div>
 
@@ -104,7 +104,10 @@
 
     <aside class="now-playing" data-player hidden aria-label="Player" data-i18n-aria-label="musicPlayerLabel">
       <div class="now-playing-inner">
-        <div class="now-playing-frame" data-player-frame></div>
+        <div class="now-playing-main">
+          <div class="now-playing-frame" data-player-frame></div>
+          <p class="now-playing-note" data-player-note></p>
+        </div>
         <button
           class="now-playing-close"
           type="button"

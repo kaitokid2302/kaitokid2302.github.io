@@ -13,7 +13,7 @@ const copy = {
       "Short stories and photographs from life outside the terminal — travel, milestones, and the ordinary evenings in between.",
     musicPageTitle: "Music — Dinh Truong Lam",
     musicPageDescription:
-      "Playlists that got me through deploys, incidents, and the quiet mornings in between.",
+      "Playlists sorted by the kind of day: good, ordinary, bad, and the ones on repeat.",
     skip: "Skip to main content",
     backToTop: "Back to top",
     backToHome: "Back to home",
@@ -85,9 +85,9 @@ const copy = {
     storyBack: "← All stories",
     storyBackPlain: "All stories",
     musicKicker: "Music",
-    musicTitle: "What was playing while it shipped.",
+    musicTitle: "What plays on a good day, and on a bad one.",
     musicIntro:
-      "Three lists that map onto three moods of this job — the release that went well, the morning with nothing on fire, and everything borrowed from someone else's taste.",
+      "Four lists, sorted by the kind of day it was. Press a track and it starts playing.",
     musicTabsLabel: "Playlists",
     musicPlayerLabel: "Player",
     musicPlayerClose: "Close player",
@@ -107,7 +107,7 @@ const copy = {
       "Những câu chuyện và hình ảnh ngoài màn hình terminal — nơi đã đi qua, những cột mốc, và các buổi chiều rất đỗi bình thường.",
     musicPageTitle: "Nhạc — Đinh Trường Lãm",
     musicPageDescription:
-      "Những playlist đi cùng tôi qua các lần deploy, các sự cố, và những buổi sáng yên ắng ở giữa.",
+      "Danh sách nhạc chia theo ngày: ngày vui, ngày thường, ngày buồn, và mấy bài nghe hoài.",
     skip: "Đi tới nội dung chính",
     backToTop: "Về đầu trang",
     backToHome: "Về trang chủ",
@@ -179,9 +179,9 @@ const copy = {
     storyBack: "← Tất cả câu chuyện",
     storyBackPlain: "Tất cả câu chuyện",
     musicKicker: "Nhạc",
-    musicTitle: "Những gì đang phát lúc code chạy được.",
+    musicTitle: "Ngày vui nghe gì, ngày buồn nghe gì.",
     musicIntro:
-      "Ba danh sách ứng với ba tâm trạng của nghề này — bản release trót lọt, buổi sáng không có gì cháy, và những thứ nghe ké gu người khác.",
+      "Bốn danh sách, chia theo hôm đó là ngày gì. Bấm vào bài nào thì bài đó chạy.",
     musicTabsLabel: "Danh sách nhạc",
     musicPlayerLabel: "Trình phát",
     musicPlayerClose: "Đóng trình phát",
