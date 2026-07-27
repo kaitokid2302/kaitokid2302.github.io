@@ -176,6 +176,34 @@ test("story markdown is escaped before parsing and slugs are validated", () => {
   assert.match(stories, /function renderMarkdown\(markdown\) \{\s*return escapeHtml\(/);
 });
 
+// Ảnh và video bo góc bằng nhau, lấy từ một biến chung để không lệch nhau về sau.
+test("every image and video frame is rounded by the shared radius", () => {
+  const css = read("styles.css");
+
+  assert.match(css, /--media-radius: \d+px;/);
+
+  for (const frame of [
+    ".profile-photo",
+    ".story-card figure",
+    ".story-figure img",
+    ".story-video iframe",
+    ".story-video-play",
+    ".now-playing-frame iframe"
+  ]) {
+    const block = css.match(new RegExp(`\\${frame.replaceAll(" ", "\\s")}\\s*\\{[^}]*\\}`));
+
+    assert.ok(block, `${frame} has no rule in styles.css`);
+    assert.match(block[0], /border-radius: var\(--media-radius\)/, `${frame} is not rounded`);
+  }
+
+  // Cắt góc chỉ ăn khi khung chặn phần tràn ra ngoài.
+  for (const clipped of [".profile-photo", ".story-card figure", ".story-video-play"]) {
+    const block = css.match(new RegExp(`\\${clipped.replaceAll(" ", "\\s")}\\s*\\{[^}]*\\}`));
+
+    assert.match(block[0], /overflow: hidden/, `${clipped} would leak square corners`);
+  }
+});
+
 test("story photos stay in webp under a per-story folder", () => {
   for (const story of storyIndex) {
     for (const path of bodiesOf(story.slug)) {

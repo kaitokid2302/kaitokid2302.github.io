@@ -12,6 +12,8 @@
   --body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: "DM Mono", ui-monospace, monospace;
   --max: 1240px;
+  /* Một bán kính duy nhất cho mọi khung ảnh và video, để chúng bo giống nhau. */
+  --media-radius: 14px;
 }
 
 :root[data-theme="dark"] {
@@ -329,6 +331,7 @@ h1 {
 .profile-photo {
   aspect-ratio: 4 / 5;
   margin: 0;
+  border-radius: var(--media-radius);
   overflow: hidden;
   background: var(--soft);
 }
@@ -683,6 +686,7 @@ h2 {
 .story-card figure {
   aspect-ratio: 4 / 5;
   margin: 0;
+  border-radius: var(--media-radius);
   overflow: hidden;
   background: var(--soft);
 }
@@ -830,6 +834,7 @@ h2 {
   display: block;
   width: 100%;
   height: auto;
+  border-radius: var(--media-radius);
   background: var(--soft);
 }
 
@@ -856,6 +861,7 @@ h2 {
   width: 100%;
   aspect-ratio: 16 / 9;
   border: 0;
+  border-radius: var(--media-radius);
 }
 
 .story-video-play {
@@ -864,7 +870,9 @@ h2 {
   width: 100%;
   aspect-ratio: 16 / 9;
   border: 0;
+  border-radius: var(--media-radius);
   padding: 0;
+  overflow: hidden;
   background: var(--soft);
   cursor: pointer;
 }
@@ -1387,7 +1395,7 @@ h2 {
   width: 100%;
   height: 152px;
   border: 0;
-  border-radius: 12px;
+  border-radius: var(--media-radius);
 }
 
 .now-playing-controls {
