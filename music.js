@@ -170,9 +170,8 @@ function renderTracks(playlist) {
       icon.append(...Array.from({ length: 3 }, () => document.createElement("i")));
 
       button.append(number, text, badge, icon);
-      button.addEventListener("click", () =>
-        window.sitePlayer.play(track.link, track.title, track.artist)
-      );
+      // Cả danh sách được giao cho thanh phát, để nó tự chạy sang bài kế tiếp.
+      button.addEventListener("click", () => window.sitePlayer.play(tracks, index));
 
       item.append(button);
       return item;

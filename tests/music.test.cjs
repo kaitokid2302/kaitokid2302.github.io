@@ -93,7 +93,14 @@ test("every page carries the shared player outside its main", () => {
   for (const page of ["index.html", "stories.html", "music.html"]) {
     const html = read(page);
 
-    for (const hook of ["data-player", "data-player-frame", "data-player-note", "data-player-close"]) {
+    for (const hook of [
+      "data-player",
+      "data-player-frame",
+      "data-player-note",
+      "data-player-prev",
+      "data-player-next",
+      "data-player-close"
+    ]) {
       assert.ok(html.includes(hook), `${page} is missing ${hook}`);
     }
 
@@ -104,6 +111,33 @@ test("every page carries the shared player outside its main", () => {
 
     assert.match(html, /<script type="module" src="player\.js"><\/script>/, page);
     assert.match(html, /<script type="module" src="router\.js"><\/script>/, page);
+  }
+});
+
+// Bấm một bài là giao cả danh sách cho thanh phát, nên hết bài nó tự chạy tiếp,
+// và hai nút lùi/tới có cái để đi.
+test("the list plays through, then stops on the last track", () => {
+  const music = read("music.js");
+  const player = read("player.js");
+
+  assert.match(music, /sitePlayer\.play\(tracks, index\)/, "the whole list must be handed over");
+
+  assert.match(player, /"playback_update"/, "finishing a track has to be detected");
+  assert.match(player, /if \(ended\) step\(1\)/);
+  assert.match(
+    player,
+    /if \(target < 0 \|\| target >= queue\.length\) return/,
+    "the queue must not wrap around"
+  );
+  assert.match(player, /playerPrev\.disabled = index <= 0/);
+  assert.match(player, /playerNext\.disabled = index < 0 \|\| index >= queue\.length - 1/);
+});
+
+test("prev and next are named in both languages", () => {
+  const script = read("script.js");
+
+  for (const key of ["musicPlayerPrev", "musicPlayerNext"]) {
+    assert.equal((script.match(new RegExp(`${key}:`, "g")) ?? []).length, 2, `${key} needs en and vi`);
   }
 });
 
@@ -152,8 +186,9 @@ test("player.js only ever builds Spotify embed urls", () => {
 test("a restored track is validated before it reaches the iframe", () => {
   const player = read("player.js");
 
-  assert.match(player, /SPOTIFY_TYPES\.includes\(stored\.type\)/);
-  assert.match(player, /SPOTIFY_ID\.test\(stored\.id/);
+  assert.match(player, /SPOTIFY_TYPES\.includes\(track\.type\)/);
+  assert.match(player, /SPOTIFY_ID\.test\(track\.id/);
+  assert.match(player, /restored\.every\(Boolean\)/, "one bad entry must void the whole queue");
 });
 
 test("every page links to the music page and both languages name it", () => {

@@ -283,17 +283,43 @@
           <div class="now-playing-frame" data-player-frame></div>
           <p class="now-playing-note" data-player-note></p>
         </div>
-        <button
-          class="now-playing-close"
-          type="button"
-          data-player-close
-          aria-label="Close player"
-          data-i18n-aria-label="musicPlayerClose"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M6 6l12 12M18 6L6 18"></path>
-          </svg>
-        </button>
+        <div class="now-playing-controls">
+          <button
+            class="now-playing-step"
+            type="button"
+            data-player-prev
+            aria-label="Previous track"
+            data-i18n-aria-label="musicPlayerPrev"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M7 6v12M18 6l-9 6 9 6"></path>
+            </svg>
+          </button>
+
+          <button
+            class="now-playing-step"
+            type="button"
+            data-player-next
+            aria-label="Next track"
+            data-i18n-aria-label="musicPlayerNext"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M17 6v12M6 6l9 6-9 6"></path>
+            </svg>
+          </button>
+
+          <button
+            class="now-playing-close"
+            type="button"
+            data-player-close
+            aria-label="Close player"
+            data-i18n-aria-label="musicPlayerClose"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M6 6l12 12M18 6L6 18"></path>
+            </svg>
+          </button>
+        </div>
       </div>
     </aside>
 

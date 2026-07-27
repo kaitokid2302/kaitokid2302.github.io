@@ -1390,6 +1390,14 @@ h2 {
   border-radius: 12px;
 }
 
+.now-playing-controls {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 8px;
+}
+
+.now-playing-step,
 .now-playing-close {
   display: inline-flex;
   width: 44px;
@@ -1402,15 +1410,24 @@ h2 {
   background: none;
   color: var(--muted);
   cursor: pointer;
-  transition: color 200ms ease, border-color 200ms ease;
+  transition: color 200ms ease, border-color 200ms ease, opacity 200ms ease;
 }
 
+.now-playing-step:hover:not([disabled]),
+.now-playing-step:focus-visible,
 .now-playing-close:hover,
 .now-playing-close:focus-visible {
   border-color: var(--ink);
   color: var(--ink);
 }
 
+/* Bài đầu và bài cuối: nút tương ứng mờ đi và bấm không ăn. */
+.now-playing-step[disabled] {
+  cursor: default;
+  opacity: 0.3;
+}
+
+.now-playing-step svg,
 .now-playing-close svg {
   width: 18px;
   height: 18px;
@@ -1466,11 +1483,20 @@ body.has-player .footer {
     display: none;
   }
 
+  /* Màn hình hẹp: ba nút xếp ngang cạnh thẻ Spotify thì thẻ bị bóp còn một nửa,
+     nên đẩy chúng xuống một hàng riêng. */
   .now-playing-inner {
+    flex-direction: column;
+    align-items: stretch;
     padding: 10px 20px;
+    gap: 10px;
+  }
+
+  .now-playing-controls {
+    justify-content: flex-end;
   }
 
   body.has-player .footer {
-    padding-bottom: 192px;
+    padding-bottom: 288px;
   }
 }
