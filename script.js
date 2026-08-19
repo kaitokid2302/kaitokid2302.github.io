@@ -378,6 +378,9 @@ const PHOTOS_BADGE_UNTIL = "2026-09-19";
 
 if (new Date() <= new Date(`${PHOTOS_BADGE_UNTIL}T23:59:59`)) {
   document.querySelector('.primary-nav a[href="photos.html"]')?.classList.add("is-new");
+  // Màn hẹp giấu cả thanh nav sau nút Menu, nên chấm phải nhảy ra ngoài nút đó,
+  // không thì chẳng ai thấy trước khi mở menu.
+  menuToggle?.classList.add("is-new");
 }
 
 // Router thay <main> mà không tải lại trang, nên phải tự dịch lại nhãn của trang mới

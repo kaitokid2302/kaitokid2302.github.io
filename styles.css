@@ -1769,7 +1769,8 @@ body.has-player .footer {
 
 /* Chấm "mới" cạnh mục vừa ra mắt — script.js chỉ gắn lớp này trước ngày hết hạn.
    Chấm chảy theo dòng chữ nên nằm đúng chỗ ở cả nav ngang lẫn menu dọc mobile. */
-.primary-nav a.is-new::after {
+.primary-nav a.is-new::after,
+.menu-toggle.is-new::after {
   content: "";
   display: inline-block;
   width: 6px;
