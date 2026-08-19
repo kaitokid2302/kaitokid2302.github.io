@@ -1,5 +1,37 @@
 [
   {
+    "folder": "2023-10-27-saint-petersburg",
+    "date": "2023-10-27",
+    "note": {
+      "en": "In Russia I never liked autumn — it always came with sad memories.",
+      "vi": "Ở Nga, chưa bao giờ mình thích mùa thu, lúc nào cũng là kỷ niệm buồn."
+    },
+    "photos": [
+      {
+        "src": "assets/photos/2023-10-27-saint-petersburg/01-img-4908-original.webp",
+        "w": 1200,
+        "h": 1600,
+        "alt": {
+          "en": "An empty pavement past a classical facade, scattered yellow leaves under a clear autumn sky",
+          "vi": "Vỉa hè vắng trước toà nhà cổ, lá vàng rải rác dưới trời thu trong"
+        }
+      },
+      {
+        "src": "assets/photos/2023-10-27-saint-petersburg/02-img-4877-original.webp",
+        "w": 1200,
+        "h": 1600,
+        "alt": {
+          "en": "Fallen yellow leaves carpeting the pavement along an apartment block",
+          "vi": "Lá vàng rụng phủ kín vỉa hè dọc dãy nhà"
+        }
+      }
+    ],
+    "place": {
+      "en": "Saint Petersburg, Russia",
+      "vi": "Saint Petersburg, Nga"
+    }
+  },
+  {
     "folder": "2026-04-01-saigon",
     "date": "2026-04-01",
     "note": {
