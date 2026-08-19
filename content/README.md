@@ -101,6 +101,81 @@ Rồi mở `http://localhost:8765/stories.html`.
 
 ---
 
+# Cách đăng ảnh mới
+
+Một folder = một nhóm ảnh = một object trong `content/photos.json`. Trang tự gom nhóm
+theo tháng từ `date`, mới nhất lên đầu.
+
+## 1. Chạy script nạp ảnh
+
+```bash
+node tools/add-photos.mjs 2026-08-19-gym ~/Downloads/IMG_3043.HEIC ~/Downloads/IMG_3044.jpg
+```
+
+Script nhận `jpg` `jpeg` `png` `heic` `heif` `webp` `avif` `tif` `tiff` (đuôi lạ thì báo
+và bỏ qua), rồi tự làm hết: nén sang `.webp` cạnh dài 1600px vào
+`assets/photos/<ten-folder>/`, đọc kích thước thật, đoán ngày chụp và upsert vào
+`content/photos.json`.
+
+Tuỳ chọn:
+
+| Cờ | Ý nghĩa |
+|---|---|
+| `--max 720` | Đổi cạnh dài tối đa (mặc định 1600) |
+| `--soft` | Làm mềm nét (blur nhẹ + nén mạnh hơn) — dùng khi ảnh nét quá không đẹp |
+
+Chạy lại script với cùng file gốc sẽ không tạo bản trùng. Nhóm đã có trong JSON thì
+script **chỉ thêm ảnh mới**, không đụng vào `date`, `note`, `place`, `alt` đã điền.
+
+## 2. Ngày tháng lấy từ đâu
+
+Trang web chỉ đọc ngày từ JSON. Script điền sẵn theo thứ tự tin cậy:
+
+1. **EXIF `DateTimeOriginal`** — ngày chụp camera ghi trong ruột ảnh, sống qua mọi lần copy
+2. Ngày sửa của file (kém tin: tải từ app nhắn tin là mất)
+3. Ngày trong tên folder (nếu đặt dạng `YYYY-MM-DD-ten`)
+
+Máy đoán sai thì sửa thẳng `date` trong JSON — script không bao giờ đè lại.
+
+## 3. Điền nốt phần chữ
+
+```json
+{
+  "folder": "2026-08-19-gym",
+  "date": "2026-08-19",
+  "place": { "en": "Da Nang, Vietnam", "vi": "Đà Nẵng" },
+  "note":  { "en": "...", "vi": "..." },
+  "photos": [
+    {
+      "src": "assets/photos/2026-08-19-gym/01-img-3043.webp",
+      "w": 540,
+      "h": 720,
+      "alt": { "en": "...", "vi": "..." }
+    }
+  ]
+}
+```
+
+| Field | Bắt buộc | Ý nghĩa |
+|---|---|---|
+| `alt` | **Có** — test fail nếu trống | Tả cái nhìn thấy trong ảnh, cho trình đọc màn hình |
+| `note` | Không | Câu chuyện của nhóm ảnh, hiện phía trên lưới ảnh |
+| `place` | Không | Hiện dưới ngày ở rail bên trái |
+
+`alt` và `note` khác nhau: `alt` là *"selfie qua gương phòng gym"*, `note` là
+*"hy vọng lần này chăm"*.
+
+## 4. Kiểm tra trước khi push
+
+```bash
+node --test "tests/*.test.cjs"
+```
+
+Test tự bắt: ảnh khai trong JSON có tồn tại thật không, thiếu `alt` bản nào, `date` sai
+định dạng, folder trùng, ảnh khai hai lần.
+
+---
+
 # Cách thêm một playlist nhạc
 
 Sửa đúng một file: `content/music.json`. Không cần build, không cần upload nhạc.

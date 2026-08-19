@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="Short stories and photographs from life outside the terminal — travel, milestones, and the ordinary evenings in between."
+      content="Photographs by month — the small days that never became stories."
     >
-    <title>Stories — Dinh Truong Lam</title>
+    <title>Photos — Dinh Truong Lam</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +25,7 @@
     </script>
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body data-title-key="storiesPageTitle" data-description-key="storiesPageDescription">
+  <body data-title-key="photosPageTitle" data-description-key="photosPageDescription">
     <a class="skip-link" href="#main" data-i18n="skip">Skip to main content</a>
 
     <header class="masthead">
@@ -46,8 +46,8 @@
         <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation" data-i18n-aria-label="primaryNav">
           <a href="index.html#work" data-i18n="navWork">Work</a>
           <a href="index.html#principles" data-i18n="navPrinciples">Principles</a>
-          <a href="stories.html" aria-current="page" data-i18n="navStories">Stories</a>
-          <a href="photos.html" data-i18n="navPhotos">Photos</a>
+          <a href="stories.html" data-i18n="navStories">Stories</a>
+          <a href="photos.html" aria-current="page" data-i18n="navPhotos">Photos</a>
           <a href="music.html" data-i18n="navMusic">Music</a>
           <a href="index.html#contact" data-i18n="navContact">Contact</a>
         </nav>
@@ -75,36 +75,46 @@
     </header>
 
     <main id="main" tabindex="-1">
-      <section class="stories" data-stories-index hidden>
+      <section class="photos">
         <div class="section-intro">
-          <p class="kicker" data-i18n="storiesKicker">Stories</p>
-          <h2 data-i18n="storiesTitle">Notes from outside the terminal.</h2>
-          <p data-i18n="storiesIntro">
-            Places, milestones, and the ordinary evenings that turned out to matter more than the milestones.
+          <p class="kicker" data-i18n="photosKicker">Photos</p>
+          <h2 data-i18n="photosTitle">The things that never became posts.</h2>
+          <p data-i18n="photosIntro">
+            Photos taken along the way, grouped by month, newest first. Some groups carry a note — the rest speak for themselves.
           </p>
         </div>
 
-        <ul class="story-list" data-story-list></ul>
-      </section>
+        <div data-photo-months hidden></div>
 
-      <article class="story" data-story-article hidden>
-        <a class="text-link story-back" href="stories.html" data-i18n="storyBack">← All stories</a>
+        <p class="music-status lede" data-photos-status hidden></p>
 
-        <header class="story-head">
-          <p class="kicker" data-story-meta></p>
-          <h1 data-story-title></h1>
-          <p class="lede" data-story-summary></p>
-        </header>
+        <div class="lightbox" data-lightbox-root hidden role="dialog" aria-modal="true">
+          <button class="lightbox-close" type="button" data-lightbox-close>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M6 6l12 12M18 6L6 18"></path>
+            </svg>
+          </button>
 
-        <div class="story-body" data-story-body></div>
-      </article>
+          <figure>
+            <img src="" alt="" data-lightbox-img>
+          </figure>
 
-      <section class="stories story-status" data-story-status hidden>
-        <p class="kicker" data-i18n="storiesKicker">Stories</p>
-        <h2 data-story-status-title></h2>
-        <p class="lede" data-story-status-text></p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="stories.html" data-i18n="storyBackPlain">All stories</a>
+          <div class="lightbox-bar">
+            <p class="lightbox-caption" data-lightbox-caption></p>
+            <span class="lightbox-counter" data-lightbox-counter></span>
+            <div class="lightbox-controls">
+              <button type="button" data-lightbox-prev>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M15 5l-7 7 7 7"></path>
+                </svg>
+              </button>
+              <button type="button" data-lightbox-next>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -166,6 +176,6 @@
     <script src="script.js"></script>
     <script type="module" src="player.js"></script>
     <script type="module" src="router.js"></script>
-    <script type="module" src="stories.js"></script>
+    <script type="module" src="photos.js"></script>
   </body>
 </html>

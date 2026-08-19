@@ -14,6 +14,9 @@ const copy = {
     musicPageTitle: "Music — Dinh Truong Lam",
     musicPageDescription:
       "Playlists sorted by the kind of day: good, ordinary, bad, and the ones on repeat.",
+    photosPageTitle: "Photos — Dinh Truong Lam",
+    photosPageDescription:
+      "Photographs by month — the small days that never became stories.",
     skip: "Skip to main content",
     backToTop: "Back to top",
     backToHome: "Back to home",
@@ -23,6 +26,7 @@ const copy = {
     navWork: "Work",
     navPrinciples: "Principles",
     navStories: "Stories",
+    navPhotos: "Photos",
     navMusic: "Music",
     navContact: "Contact",
     preferenceControls: "Theme and language controls",
@@ -93,6 +97,10 @@ const copy = {
     musicPlayerPrev: "Previous track",
     musicPlayerNext: "Next track",
     musicPlayerClose: "Close player",
+    photosKicker: "Photos",
+    photosTitle: "The things that never became posts.",
+    photosIntro:
+      "Photos taken along the way, grouped by month, newest first. Some groups carry a note — the rest speak for themselves.",
     contactKicker: "04 — Contact",
     contactTitle: "Have a hard backend problem? Start with the architecture.",
     contactEmail: "Email me",
@@ -110,6 +118,9 @@ const copy = {
     musicPageTitle: "Nhạc — Đinh Trường Lãm",
     musicPageDescription:
       "Danh sách nhạc chia theo ngày: ngày vui, ngày thường, ngày buồn, và mấy bài nghe hoài.",
+    photosPageTitle: "Ảnh — Đinh Trường Lãm",
+    photosPageDescription:
+      "Ảnh xếp theo tháng — những ngày nhỏ chưa thành bài viết.",
     skip: "Đi tới nội dung chính",
     backToTop: "Về đầu trang",
     backToHome: "Về trang chủ",
@@ -119,6 +130,7 @@ const copy = {
     navWork: "Công việc",
     navPrinciples: "Nguyên tắc",
     navStories: "Câu chuyện",
+    navPhotos: "Ảnh",
     navMusic: "Nhạc",
     navContact: "Liên hệ",
     preferenceControls: "Tuỳ chọn giao diện và ngôn ngữ",
@@ -189,6 +201,10 @@ const copy = {
     musicPlayerPrev: "Bài trước",
     musicPlayerNext: "Bài sau",
     musicPlayerClose: "Đóng trình phát",
+    photosKicker: "Ảnh",
+    photosTitle: "Những thứ không thành bài viết.",
+    photosIntro:
+      "Ảnh chụp dọc đường, xếp theo tháng, mới nhất ở trên. Nhóm nào có chuyện đáng kể thì có vài dòng ghi chú — không thì để ảnh tự nói.",
     contactKicker: "04 — Liên hệ",
     contactTitle: "Có bài toán backend khó? Hãy bắt đầu từ kiến trúc.",
     contactEmail: "Gửi email",
