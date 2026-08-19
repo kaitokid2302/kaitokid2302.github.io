@@ -372,6 +372,14 @@ document.addEventListener("click", async (event) => {
 setLanguage(getStoredPreference("landing-language", DEFAULT_LANGUAGE, LANGUAGE_VALUES), false);
 setTheme(getStoredPreference("landing-theme", DEFAULT_THEME, THEME_VALUES), false);
 
+// Mục Ảnh mới ra mắt: gắn chấm "mới" lên nav đến hết ngày ghi dưới đây rồi tự tắt.
+// Masthead không bị router thay, nên gắn một lần lúc tải trang là đủ.
+const PHOTOS_BADGE_UNTIL = "2026-09-19";
+
+if (new Date() <= new Date(`${PHOTOS_BADGE_UNTIL}T23:59:59`)) {
+  document.querySelector('.primary-nav a[href="photos.html"]')?.classList.add("is-new");
+}
+
 // Router thay <main> mà không tải lại trang, nên phải tự dịch lại nhãn của trang mới
 // và đếm thêm một lượt xem.
 document.addEventListener("site:page", () => {

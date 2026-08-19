@@ -96,6 +96,14 @@ test("every photo file exists, has real dimensions, and both alt texts", () => {
   }
 });
 
+test("the new-section badge has an expiry date and a style to render", () => {
+  const script = read("script.js");
+
+  assert.match(script, /PHOTOS_BADGE_UNTIL = "\d{4}-\d{2}-\d{2}"/, "chấm mới phải có ngày hết hạn cố định");
+  assert.match(script, /classList\.add\("is-new"\)/);
+  assert.match(read("styles.css"), /\.primary-nav a\.is-new::after/);
+});
+
 test("photos.js escapes user content and stays on the same origin", () => {
   const script = read("photos.js");
 

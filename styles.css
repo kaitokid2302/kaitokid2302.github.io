@@ -1766,3 +1766,16 @@ body.has-player .footer {
     flex-wrap: wrap;
   }
 }
+
+/* Chấm "mới" cạnh mục vừa ra mắt — script.js chỉ gắn lớp này trước ngày hết hạn.
+   Chấm chảy theo dòng chữ nên nằm đúng chỗ ở cả nav ngang lẫn menu dọc mobile. */
+.primary-nav a.is-new::after {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-left: 6px;
+  border-radius: 999px;
+  background: var(--accent);
+  vertical-align: 6px;
+}
