@@ -369,19 +369,25 @@ document.addEventListener("click", async (event) => {
   }
 });
 
-setLanguage(getStoredPreference("landing-language", DEFAULT_LANGUAGE, LANGUAGE_VALUES), false);
-setTheme(getStoredPreference("landing-theme", DEFAULT_THEME, THEME_VALUES), false);
-
-// Mục Ảnh mới ra mắt: gắn chấm "mới" lên nav đến hết ngày ghi dưới đây rồi tự tắt.
-// Masthead không bị router thay, nên gắn một lần lúc tải trang là đủ.
+// Mục Ảnh mới ra mắt: gắn chấm "mới" đến hết ngày ghi dưới đây rồi tự tắt.
+// Masthead không bị router thay, nên dựng một lần lúc tải trang là đủ.
 const PHOTOS_BADGE_UNTIL = "2026-09-19";
 
 if (new Date() <= new Date(`${PHOTOS_BADGE_UNTIL}T23:59:59`)) {
   document.querySelector('.primary-nav a[href="photos.html"]')?.classList.add("is-new");
-  // Màn hẹp giấu cả thanh nav sau nút Menu, nên chấm phải nhảy ra ngoài nút đó,
-  // không thì chẳng ai thấy trước khi mở menu.
-  menuToggle?.classList.add("is-new");
+
+  // Màn hẹp gấp cả thanh nav vào sau nút Menu, nên chấm trong đó chẳng ai thấy.
+  // Dựng thêm một lối tắt đứng ngoài, cạnh nút Menu — CSS chỉ cho nó hiện ở khổ hẹp.
+  const shortcut = document.createElement("a");
+  shortcut.className = "nav-shortcut is-new";
+  shortcut.href = "photos.html";
+  shortcut.dataset.i18n = "navPhotos";
+  shortcut.textContent = "Photos";
+  menuToggle?.before(shortcut);
 }
+
+setLanguage(getStoredPreference("landing-language", DEFAULT_LANGUAGE, LANGUAGE_VALUES), false);
+setTheme(getStoredPreference("landing-theme", DEFAULT_THEME, THEME_VALUES), false);
 
 // Router thay <main> mà không tải lại trang, nên phải tự dịch lại nhãn của trang mới
 // và đếm thêm một lượt xem.

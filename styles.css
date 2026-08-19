@@ -1770,7 +1770,7 @@ body.has-player .footer {
 /* Chấm "mới" cạnh mục vừa ra mắt — script.js chỉ gắn lớp này trước ngày hết hạn.
    Chấm chảy theo dòng chữ nên nằm đúng chỗ ở cả nav ngang lẫn menu dọc mobile. */
 .primary-nav a.is-new::after,
-.menu-toggle.is-new::after {
+.nav-shortcut.is-new::after {
   content: "";
   display: inline-block;
   width: 6px;
@@ -1779,4 +1779,28 @@ body.has-player .footer {
   border-radius: 999px;
   background: var(--accent);
   vertical-align: 6px;
+}
+
+/* Lối tắt tới mục vừa ra mắt, do script.js dựng khi còn trong hạn. Ở khổ rộng
+   thanh nav đã hiện đủ mục nên lối tắt này thừa — chỉ bật ở khổ hẹp. */
+.nav-shortcut {
+  display: none;
+  align-items: center;
+  min-height: 44px;
+  font-size: 15px;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: color 200ms ease, border-color 200ms ease;
+}
+
+.nav-shortcut:hover,
+.nav-shortcut:focus-visible {
+  border-color: currentColor;
+  color: var(--accent);
+}
+
+@media (max-width: 800px) {
+  .nav-shortcut {
+    display: inline-flex;
+  }
 }
