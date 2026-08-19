@@ -1,5 +1,37 @@
 [
   {
+    "folder": "2026-04-01-saigon",
+    "date": "2026-04-01",
+    "note": {
+      "en": "If only Saigon's sunshine were like Saint Petersburg's.",
+      "vi": "Nếu nắng của Sài Gòn mà như nắng của Saint Petersburg thì tốt biết bao."
+    },
+    "photos": [
+      {
+        "src": "assets/photos/2026-04-01-saigon/01-img-3052.webp",
+        "w": 1200,
+        "h": 1600,
+        "alt": {
+          "en": "A Saigon street from above, traffic in late-afternoon golden light",
+          "vi": "Góc phố Sài Gòn nhìn từ trên cao, dòng xe trong nắng chiều vàng"
+        }
+      },
+      {
+        "src": "assets/photos/2026-04-01-saigon/02-img-3062.webp",
+        "w": 1200,
+        "h": 1600,
+        "alt": {
+          "en": "A paved sidewalk past a brick arcade of cafés, sunlight through the trees",
+          "vi": "Vỉa hè lát đá trước dãy quán tường gạch, nắng xuyên qua tán cây"
+        }
+      }
+    ],
+    "place": {
+      "en": "Saigon, Vietnam",
+      "vi": "Sài Gòn"
+    }
+  },
+  {
     "folder": "2026-08-19-gym",
     "date": "2026-08-19",
     "note": {
