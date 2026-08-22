@@ -1,5 +1,37 @@
 [
   {
+    "folder": "2025-06-23-tot-nghiep",
+    "date": "2025-06-23",
+    "note": {
+      "en": "Finally.",
+      "vi": "Cuối cùng"
+    },
+    "photos": [
+      {
+        "src": "assets/photos/2025-06-23-tot-nghiep/01-itmo-street.webp",
+        "w": 960,
+        "h": 1280,
+        "alt": {
+          "en": "A tram-lined street on a clear summer morning, old apartment blocks on the left and trees along the embankment on the right",
+          "vi": "Con phố có đường tàu điện trong buổi sáng hè trong, dãy nhà cổ bên trái, cây xanh dọc kè bên phải"
+        }
+      },
+      {
+        "src": "assets/photos/2025-06-23-tot-nghiep/02-itmo-diploma.webp",
+        "w": 960,
+        "h": 1280,
+        "alt": {
+          "en": "Holding the cover of an ITMO diploma folder, standing in a room lined with bookshelves",
+          "vi": "Cầm bìa bằng tốt nghiệp ITMO, đứng trong phòng có mấy giá sách"
+        }
+      }
+    ],
+    "place": {
+      "en": "Saint Petersburg, Russia",
+      "vi": "Saint Petersburg, Nga"
+    }
+  },
+  {
     "folder": "2024-03-24-bua-sang",
     "date": "2024-03-24",
     "note": {
