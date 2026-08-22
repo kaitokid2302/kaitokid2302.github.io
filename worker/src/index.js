@@ -1,5 +1,5 @@
 /**
- * dtr-analytics — Worker nhận beacon từ trang tĩnh và trả số liệu cho stats.html
+ * dtr-analytics - Worker nhận beacon từ trang tĩnh và trả số liệu cho stats.html
  *
  * Hai route:
  *   POST /            → nhận 1 lượt xem trang, ghi vào D1
@@ -64,7 +64,7 @@ async function collect(request, env, headers) {
 const authorized = (request, env) =>
   Boolean(env.STATS_KEY) && request.headers.get("X-Stats-Key") === env.STATS_KEY;
 
-// Xoá sạch bảng visits. Không hoàn tác được — stats.html hỏi xác nhận trước khi gọi.
+// Xoá sạch bảng visits. Không hoàn tác được - stats.html hỏi xác nhận trước khi gọi.
 async function reset(request, env, headers) {
   if (!authorized(request, env)) {
     return Response.json({ error: "Sai key" }, { status: 403, headers });

@@ -226,7 +226,7 @@ async function renderStory(story) {
   articleView.querySelector("[data-story-summary]").textContent = pick(story.summary);
   articleView.querySelector("[data-story-body]").innerHTML = renderMarkdown(body);
 
-  document.title = `${title} — Dinh Truong Lam`;
+  document.title = `${title} - Dinh Truong Lam`;
   document.querySelector("meta[name='description']")?.setAttribute("content", pick(story.summary));
   showView(articleView);
 }

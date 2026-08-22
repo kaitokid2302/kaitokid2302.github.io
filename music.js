@@ -192,7 +192,7 @@ function markPlaying() {
 }
 
 // Đổi tab thì đẩy một mục vào history, để back/forward chuyển qua lại giữa các danh sách
-// mà không tải lại trang — nhạc trong thanh phát vẫn chạy tiếp.
+// mà không tải lại trang - nhạc trong thanh phát vẫn chạy tiếp.
 function selectPlaylist(slug, push = false) {
   const playlist = playlists.find((entry) => entry.slug === slug) ?? playlists[0];
   if (!playlist) return;

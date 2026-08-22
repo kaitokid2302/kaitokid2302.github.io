@@ -1,6 +1,7 @@
 const assert = require("node:assert/strict");
 const { existsSync, readFileSync } = require("node:fs");
 const test = require("node:test");
+const { execFileSync } = require("node:child_process");
 
 const read = (file) => readFileSync(`${__dirname}/../${file}`, "utf8");
 
@@ -101,7 +102,7 @@ test("education and portrait identify the verified ITMO program", () => {
 
   assert.match(html, /https:\/\/en\.itmo\.ru\/en\//);
   assert.match(html, /Software Engineering/);
-  assert.match(html, /2019—2025/);
+  assert.match(html, /2019-2025/);
   assert.match(html, /GPA 3\.2 \/ 4\.0/);
   assert.match(html, /assets\/lam-sunset-portrait\.webp/);
   assert.match(html, /data-i18n-alt="portraitAlt"/);
@@ -140,4 +141,21 @@ test("capabilities resolve to their proof cases", () => {
   assert.match(script, /function revealCase\(/);
   assert.match(script, /window\.addEventListener\("hashchange", revealCaseFromHash\)/);
   assert.match(css, /\.capability-line a\s*\{[\s\S]*min-height:\s*44px/);
+});
+
+// Sếp không dùng gạch dài: chỉ hyphen "-". Dò bằng mã ký tự để chính file test này
+// không chứa ký tự đang bị cấm.
+test("no em dash or en dash anywhere in the tracked project", () => {
+  const forbidden = new RegExp(`[${String.fromCharCode(0x2014)}${String.fromCharCode(0x2013)}]`);
+  const tracked = execFileSync("git", ["ls-files"], {
+    cwd: `${__dirname}/..`,
+    encoding: "utf8"
+  })
+    .split("\n")
+    .filter(Boolean)
+    .filter((file) => /\.(json|jsonc|html|css|js|mjs|cjs|md)$/.test(file));
+
+  const offenders = tracked.filter((file) => forbidden.test(read(file)));
+
+  assert.deepEqual(offenders, []);
 });

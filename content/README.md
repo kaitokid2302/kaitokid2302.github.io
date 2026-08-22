@@ -10,7 +10,7 @@ Tạo thư mục riêng cho bài, tên thư mục **trùng với slug** của b�
 assets/stories/<slug>/
 ```
 
-Nén ảnh sang `.webp` trước khi bỏ vào (ảnh gốc từ điện thoại 3–6 MB, sau khi nén còn
+Nén ảnh sang `.webp` trước khi bỏ vào (ảnh gốc từ điện thoại 3-6 MB, sau khi nén còn
 ~200 KB). Trên máy có ImageMagick:
 
 ```bash
@@ -19,7 +19,7 @@ magick input.jpg -resize 1600x1600\> -quality 82 assets/stories/<slug>/01-ten-an
 
 Quy ước đặt tên: `01-`, `02-`… để ảnh tự sắp đúng thứ tự khi nhìn trong thư mục.
 
-## 2. Viết nội dung — mỗi ngôn ngữ một file
+## 2. Viết nội dung - mỗi ngôn ngữ một file
 
 ```
 content/stories/<slug>.en.md    ← bắt buộc (bản dự phòng khi thiếu bản dịch)
@@ -27,7 +27,7 @@ content/stories/<slug>.vi.md    ← tuỳ chọn
 ```
 
 Người xem bấm nút **EN / VI** trên đầu trang thì trang tự nạp file tương ứng. Nếu chưa
-viết bản `vi`, trang sẽ hiển thị bản `en` thay thế — không bị vỡ.
+viết bản `vi`, trang sẽ hiển thị bản `en` thay thế - không bị vỡ.
 
 ## 3. Khai báo bài vào mục lục
 
@@ -51,16 +51,16 @@ Thêm một object vào đầu mảng trong `content/stories.json`:
 | `slug` | string, chỉ `a-z 0-9 -` | Định danh bài. Dùng làm tên file `.md`, tên thư mục ảnh, và tham số URL `stories.html?s=<slug>` |
 | `date` | string `YYYY-MM-DD` | Ngày tạo bài. Hiển thị trên trang và dùng để sắp xếp (mới nhất lên đầu) |
 | `cover` | đường dẫn ảnh | Ảnh bìa trên trang danh sách |
-| `coverAlt` | song ngữ | Mô tả ảnh bìa cho trình đọc màn hình — bắt buộc |
+| `coverAlt` | song ngữ | Mô tả ảnh bìa cho trình đọc màn hình - bắt buộc |
 | `place`, `tags` | song ngữ | Hiện trên dòng meta, cạnh ngày tháng |
 
-Thứ tự trong file JSON không quan trọng — trang tự sắp theo `date` giảm dần.
+Thứ tự trong file JSON không quan trọng - trang tự sắp theo `date` giảm dần.
 
 ## 4. Cú pháp Markdown được hỗ trợ
 
 Đây là **một tập con của Markdown** do `stories.js` tự dịch (không dùng thư viện ngoài).
 Toàn bộ nội dung được escape trước khi dịch, nên viết HTML thẳng trong `.md` sẽ **không**
-chạy — đó là chủ ý, để nội dung không bao giờ chèn được script vào trang.
+chạy - đó là chủ ý, để nội dung không bao giờ chèn được script vào trang.
 
 | Viết | Ra cái gì |
 |---|---|
@@ -122,7 +122,7 @@ Tuỳ chọn:
 | Cờ | Ý nghĩa |
 |---|---|
 | `--max 720` | Đổi cạnh dài tối đa (mặc định 1600) |
-| `--soft` | Làm mềm nét (blur nhẹ + nén mạnh hơn) — dùng khi ảnh nét quá không đẹp |
+| `--soft` | Làm mềm nét (blur nhẹ + nén mạnh hơn) - dùng khi ảnh nét quá không đẹp |
 
 Chạy lại script với cùng file gốc sẽ không tạo bản trùng. Nhóm đã có trong JSON thì
 script **chỉ thêm ảnh mới**, không đụng vào `date`, `note`, `place`, `alt` đã điền.
@@ -131,11 +131,11 @@ script **chỉ thêm ảnh mới**, không đụng vào `date`, `note`, `place`,
 
 Trang web chỉ đọc ngày từ JSON. Script điền sẵn theo thứ tự tin cậy:
 
-1. **EXIF `DateTimeOriginal`** — ngày chụp camera ghi trong ruột ảnh, sống qua mọi lần copy
+1. **EXIF `DateTimeOriginal`** - ngày chụp camera ghi trong ruột ảnh, sống qua mọi lần copy
 2. Ngày sửa của file (kém tin: tải từ app nhắn tin là mất)
 3. Ngày trong tên folder (nếu đặt dạng `YYYY-MM-DD-ten`)
 
-Máy đoán sai thì sửa thẳng `date` trong JSON — script không bao giờ đè lại.
+Máy đoán sai thì sửa thẳng `date` trong JSON - script không bao giờ đè lại.
 
 ## 3. Điền nốt phần chữ
 
@@ -158,7 +158,7 @@ Máy đoán sai thì sửa thẳng `date` trong JSON — script không bao giờ
 
 | Field | Bắt buộc | Ý nghĩa |
 |---|---|---|
-| `alt` | **Có** — test fail nếu trống | Tả cái nhìn thấy trong ảnh, cho trình đọc màn hình |
+| `alt` | **Có** - test fail nếu trống | Tả cái nhìn thấy trong ảnh, cho trình đọc màn hình |
 | `note` | Không | Câu chuyện của nhóm ảnh, hiện phía trên lưới ảnh |
 | `place` | Không | Hiện dưới ngày ở rail bên trái |
 
@@ -211,8 +211,8 @@ Phần `?si=...` giữ hay bỏ đều được. Nhận cả 4 loại: `track`, 
 |---|---|---|
 | `slug` | string, chỉ `a-z 0-9 -` | Định danh list. Dùng cho link chia sẻ `music.html?p=<slug>` |
 | `title`, `note` | song ngữ | Tên và mô tả list. Bắt buộc đủ cả `en` lẫn `vi` |
-| `tracks[].title` | string | Tên bài — **phải tự gõ**, trang không hỏi Spotify để lấy tên |
-| `tracks[].artist` | string | Nghệ sĩ — cũng phải tự gõ |
+| `tracks[].title` | string | Tên bài - **phải tự gõ**, trang không hỏi Spotify để lấy tên |
+| `tracks[].artist` | string | Nghệ sĩ - cũng phải tự gõ |
 | `tracks[].spotify` | URL | Link copy ở bước 1 |
 
 Thứ tự trong mảng chính là thứ tự hiển thị. Playlist đầu tiên là playlist mở sẵn.
@@ -226,7 +226,7 @@ thì, và chỉ khi người xem bấm vào một bài thì iframe Spotify mới
 ## 4. Điều cần biết trước khi khoe với người khác
 
 **Người chưa đăng nhập Spotify chỉ nghe được 30 giây mỗi bài.** Đây là giới hạn của
-Spotify, không phải lỗi của trang — chính player hiển thị nhãn `Preview`. Ai đã đăng nhập
+Spotify, không phải lỗi của trang - chính player hiển thị nhãn `Preview`. Ai đã đăng nhập
 Spotify trên trình duyệt đó thì nghe đầy đủ. Không có cách nào lách, kể cả trả tiền.
 
 Iframe do Spotify phục vụ, nên khi người xem bấm phát thì Spotify nhìn thấy họ. Trang chỉ

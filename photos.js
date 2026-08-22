@@ -229,7 +229,7 @@ async function loadAndRender() {
   }
 
   // Người xem có thể đã chuyển trang trong lúc chờ mạng: <main> cũ đã bị router
-  // gỡ rồi, các tham chiếu DOM ở đây đã chết — không được đụng vào.
+  // gỡ rồi, các tham chiếu DOM ở đây đã chết - không được đụng vào.
   if (!onPhotosPage()) return;
 
   if (!loaded) {
@@ -279,7 +279,7 @@ function trapFocus(event) {
   }
 }
 
-// Bắt ở capture phase: player.js cũng nghe Escape trên document để tắt nhạc —
+// Bắt ở capture phase: player.js cũng nghe Escape trên document để tắt nhạc -
 // đóng lightbox mà kéo theo tắt bài đang phát (và mất hàng đợi) là sai.
 document.addEventListener(
   "keydown",
@@ -299,7 +299,7 @@ document.addEventListener(
 document.addEventListener("site:language", () => {
   if (!onPhotosPage()) return;
 
-  // Lần tải trước hỏng: thử lại — nếu vẫn hỏng, thông báo lỗi hiện bằng ngôn ngữ mới.
+  // Lần tải trước hỏng: thử lại - nếu vẫn hỏng, thông báo lỗi hiện bằng ngôn ngữ mới.
   if (!groups) {
     loadAndRender();
     return;

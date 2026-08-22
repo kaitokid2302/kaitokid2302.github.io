@@ -3,7 +3,7 @@
 	"name": "dtr-analytics",
 	"main": "src/index.js",
 	"compatibility_date": "2026-07-22",
-	// Bật URL chính .workers.dev, tắt Preview URL (mỗi bản deploy sinh thêm 1 URL công khai — không cần).
+	// Bật URL chính .workers.dev, tắt Preview URL (mỗi bản deploy sinh thêm 1 URL công khai - không cần).
 	"workers_dev": true,
 	"preview_urls": false,
 	"observability": {

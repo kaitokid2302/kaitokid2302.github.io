@@ -59,7 +59,7 @@ function loadScript(src, type) {
 }
 
 // Trang mới có thể cần script mà phiên này chưa tải (ví dụ vào trang nhạc lần đầu).
-// Script đã tải rồi thì không tải lại — nó tự dựng lại nội dung qua sự kiện site:page.
+// Script đã tải rồi thì không tải lại - nó tự dựng lại nội dung qua sự kiện site:page.
 async function loadNewScripts(doc) {
   for (const script of doc.querySelectorAll("script[src]")) {
     const src = new URL(script.getAttribute("src"), window.location.href).href;

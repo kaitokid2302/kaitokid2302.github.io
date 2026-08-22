@@ -10,7 +10,7 @@
 //   - nhóm có rồi   → chỉ thêm ảnh mới, KHÔNG đụng date / note / place / alt đã điền
 //   - webp đã có trên đĩa nhưng thiếu trong JSON → vá lại entry còn thiếu
 //
-// --soft: giảm nét (blur nhẹ + quality thấp hơn) — dùng kèm --max nhỏ khi muốn ảnh mờ.
+// --soft: giảm nét (blur nhẹ + quality thấp hơn) - dùng kèm --max nhỏ khi muốn ảnh mờ.
 
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
@@ -85,7 +85,7 @@ mkdirSync(destDir, { recursive: true });
 const existing = readdirSync(destDir).filter((name) => NAME_PATTERN.test(name));
 const existingBySlug = new Map(existing.map((name) => [name.match(NAME_PATTERN)[2], name]));
 
-// Đánh số tiếp theo số lớn nhất đang có, không đếm số lượng file — file 02 bị xoá
+// Đánh số tiếp theo số lớn nhất đang có, không đếm số lượng file - file 02 bị xoá
 // thì ảnh mới vẫn phải là 04 chứ không được sinh một 03 thứ hai.
 let nextNumber = Math.max(0, ...existing.map((name) => Number(name.match(NAME_PATTERN)[1]))) + 1;
 
@@ -127,7 +127,7 @@ for (const input of files) {
       h: height,
       alt: { en: "", vi: "" }
     });
-    console.warn(`! Đã có sẵn ${already} — không nén lại, chỉ soát JSON: ${input}`);
+    console.warn(`! Đã có sẵn ${already} - không nén lại, chỉ soát JSON: ${input}`);
     continue;
   }
 

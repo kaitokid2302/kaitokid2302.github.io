@@ -63,7 +63,7 @@ function labelFrame() {
   const track = playing();
   if (!frame || !track) return;
 
-  frame.title = `${playerDictionary().nowPlaying}: ${track.title} — ${track.artist}`;
+  frame.title = `${playerDictionary().nowPlaying}: ${track.title} - ${track.artist}`;
 }
 
 function updateSteps() {

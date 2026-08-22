@@ -43,7 +43,7 @@ npx wrangler d1 execute dtr-analytics --remote --file=schema.sql
 npx wrangler secret put STATS_KEY
 ```
 
-Nó hỏi giá trị — gõ một chuỗi bất kỳ tự nghĩ ra (đây là mật khẩu để xem số liệu).
+Nó hỏi giá trị - gõ một chuỗi bất kỳ tự nghĩ ra (đây là mật khẩu để xem số liệu).
 Không viết chuỗi này vào bất kỳ file nào trong repo.
 
 **4. Deploy**
@@ -62,7 +62,7 @@ Mở `../script.js`, tìm dòng:
 const ANALYTICS_ENDPOINT = "";
 ```
 
-Dán URL ở bước 4 vào. Commit và push — GitHub Pages tự cập nhật.
+Dán URL ở bước 4 vào. Commit và push - GitHub Pages tự cập nhật.
 
 ## Xem số liệu
 
@@ -76,8 +76,8 @@ trình duyệt nhớ luôn cho các lần sau.
 | `ts` | Thời điểm ISO |
 | `ip` | IP khách (Cloudflare đưa qua header `CF-Connecting-IP`) |
 | `country` / `city` / `isp` | Cloudflare tự nhận diện từ IP, không cần API ngoài |
-| `vid` | UUID trang tự phát, lưu trong localStorage khách — nhận diện khách quay lại |
-| `fp` | Fingerprint trình duyệt (hash 16 ký tự). Safari/Brave làm nhiễu → chỉ đúng ~40–60% |
+| `vid` | UUID trang tự phát, lưu trong localStorage khách - nhận diện khách quay lại |
+| `fp` | Fingerprint trình duyệt (hash 16 ký tự). Safari/Brave làm nhiễu → chỉ đúng ~40-60% |
 | `path` / `referrer` | Trang nào, tới từ đâu |
 
 ## Lệnh hay dùng

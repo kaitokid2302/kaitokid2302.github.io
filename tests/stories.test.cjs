@@ -138,7 +138,7 @@ test("story bodies are language-suffixed with an English fallback", () => {
 // Both files are classic scripts sharing one global scope, so a duplicated
 // top-level name is a SyntaxError that silently kills the whole stories page.
 // Router nạp script của trang khác vào cùng một tài liệu, nên hai file chỉ được phép
-// trùng tên khi chúng là module — module có scope riêng, script thường thì không.
+// trùng tên khi chúng là module - module có scope riêng, script thường thì không.
 test("page scripts loaded side by side are modules", () => {
   for (const page of ["index.html", "stories.html", "music.html"]) {
     const html = read(page);

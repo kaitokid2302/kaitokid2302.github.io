@@ -1768,7 +1768,7 @@ body.has-player .footer {
   }
 }
 
-/* Chấm "mới" cạnh mục vừa ra mắt — script.js chỉ gắn lớp này trước ngày hết hạn.
+/* Chấm "mới" cạnh mục vừa ra mắt - script.js chỉ gắn lớp này trước ngày hết hạn.
    Chấm chảy theo dòng chữ nên nằm đúng chỗ ở cả nav ngang lẫn menu dọc mobile. */
 .primary-nav a.is-new::after,
 .nav-shortcut.is-new::after {
@@ -1783,7 +1783,7 @@ body.has-player .footer {
 }
 
 /* Lối tắt tới mục vừa ra mắt, do script.js dựng khi còn trong hạn. Ở khổ rộng
-   thanh nav đã hiện đủ mục nên lối tắt này thừa — chỉ bật ở khổ hẹp. */
+   thanh nav đã hiện đủ mục nên lối tắt này thừa - chỉ bật ở khổ hẹp. */
 .nav-shortcut {
   display: none;
   align-items: center;

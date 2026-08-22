@@ -5,18 +5,18 @@ const THEME_VALUES = ["light", "dark"];
 
 const copy = {
   en: {
-    pageTitle: "Dinh Truong Lam — Senior Backend / System Engineer",
+    pageTitle: "Dinh Truong Lam - Senior Backend / System Engineer",
     pageDescription:
       "Senior Backend / System Engineer focused on resilient, high-throughput distributed systems.",
-    storiesPageTitle: "Stories — Dinh Truong Lam",
+    storiesPageTitle: "Stories - Dinh Truong Lam",
     storiesPageDescription:
-      "Short stories and photographs from life outside the terminal — travel, milestones, and the ordinary evenings in between.",
-    musicPageTitle: "Music — Dinh Truong Lam",
+      "Short stories and photographs from life outside the terminal - travel, milestones, and the ordinary evenings in between.",
+    musicPageTitle: "Music - Dinh Truong Lam",
     musicPageDescription:
       "Playlists sorted by the kind of day: good, ordinary, bad, and the ones on repeat.",
-    photosPageTitle: "Photos — Dinh Truong Lam",
+    photosPageTitle: "Photos - Dinh Truong Lam",
     photosPageDescription:
-      "Photographs by month — the small days that never became stories.",
+      "Photographs by month - the small days that never became stories.",
     skip: "Skip to main content",
     backToTop: "Back to top",
     backToHome: "Back to home",
@@ -47,14 +47,14 @@ const copy = {
     itmoLinkText: "Visit official site",
     itmoLinkLabel: "Visit ITMO University (opens in a new tab)",
     educationProgram: "Software Engineering",
-    educationMeta: "2019—2025 · GPA 3.2 / 4.0",
+    educationMeta: "2019-2025 · GPA 3.2 / 4.0",
     educationQsText: "QS #78 worldwide in Computer Science & Information Systems (2024)",
     educationQsLinkLabel: "Read ITMO's QS ranking history (opens in a new tab)",
     educationIcpcText: "Home to the world’s only seven-time ACM ICPC champion team",
     educationIcpcLinkLabel: "Read ITMO's ACM ICPC achievement (opens in a new tab)",
     capabilityLine: "Technical capabilities",
     technologyStack: "Technology stack",
-    workKicker: "01 — Selected work",
+    workKicker: "01 - Selected work",
     workTitle: "Systems told through decisions and outcomes.",
     workIntro:
       "Not a technology list. Each story below is a problem solved through architecture, operation, and explicit trade-offs.",
@@ -72,7 +72,7 @@ const copy = {
     case3Result: "15M records/day",
     case3Detail:
       "Designed event-driven ingestion for 50+ IoT stations: Kafka ingestion, MinIO claim-check, append-only Cassandra writes, and cache-aside API reads.",
-    principlesKicker: "02 — Working principles",
+    principlesKicker: "02 - Working principles",
     principlesTitle: "A good system does more than work on a normal day.",
     principle1Title: "Design for failure.",
     principle1Text: "Treat degradation, retries, and idempotency as part of the primary flow.",
@@ -80,7 +80,7 @@ const copy = {
     principle2Text: "Start with latency, saturation, and operational signals instead of intuition.",
     principle3Title: "Roll out with a way back.",
     principle3Text: "Use observability, feature flags, and canaries to reduce blast radius.",
-    recognitionKicker: "03 — Foundation",
+    recognitionKicker: "03 - Foundation",
     recognitionTitle: "Algorithmic foundation",
     storiesKicker: "Stories",
     storiesTitle: "Notes from outside the terminal.",
@@ -100,8 +100,8 @@ const copy = {
     photosKicker: "Photos",
     photosTitle: "The things that never became posts.",
     photosIntro:
-      "Photos taken along the way, grouped by month, newest first. Some groups carry a note — the rest speak for themselves.",
-    contactKicker: "04 — Contact",
+      "Photos taken along the way, grouped by month, newest first. Some groups carry a note - the rest speak for themselves.",
+    contactKicker: "04 - Contact",
     contactTitle: "Have a hard backend problem? Start with the architecture.",
     contactEmail: "Email me",
     copyEmail: "Copy email",
@@ -109,18 +109,18 @@ const copy = {
     copyFallback: "dinhtruonglam001@gmail.com"
   },
   vi: {
-    pageTitle: "Đinh Trường Lãm — Senior Backend / System Engineer",
+    pageTitle: "Đinh Trường Lãm - Senior Backend / System Engineer",
     pageDescription:
       "Senior Backend / System Engineer tập trung vào hệ thống phân tán chịu tải cao, bền vững và dễ vận hành.",
-    storiesPageTitle: "Câu chuyện — Đinh Trường Lãm",
+    storiesPageTitle: "Câu chuyện - Đinh Trường Lãm",
     storiesPageDescription:
-      "Những câu chuyện và hình ảnh ngoài màn hình terminal — nơi đã đi qua, những cột mốc, và các buổi chiều rất đỗi bình thường.",
-    musicPageTitle: "Nhạc — Đinh Trường Lãm",
+      "Những câu chuyện và hình ảnh ngoài màn hình terminal - nơi đã đi qua, những cột mốc, và các buổi chiều rất đỗi bình thường.",
+    musicPageTitle: "Nhạc - Đinh Trường Lãm",
     musicPageDescription:
       "Danh sách nhạc chia theo ngày: ngày vui, ngày thường, ngày buồn, và mấy bài nghe hoài.",
-    photosPageTitle: "Ảnh — Đinh Trường Lãm",
+    photosPageTitle: "Ảnh - Đinh Trường Lãm",
     photosPageDescription:
-      "Ảnh xếp theo tháng — những ngày nhỏ chưa thành bài viết.",
+      "Ảnh xếp theo tháng - những ngày nhỏ chưa thành bài viết.",
     skip: "Đi tới nội dung chính",
     backToTop: "Về đầu trang",
     backToHome: "Về trang chủ",
@@ -151,14 +151,14 @@ const copy = {
     itmoLinkText: "Xem trang chính thức",
     itmoLinkLabel: "Truy cập ITMO University (mở trong tab mới)",
     educationProgram: "Kỹ thuật phần mềm",
-    educationMeta: "2019—2025 · GPA 3.2 / 4.0",
+    educationMeta: "2019-2025 · GPA 3.2 / 4.0",
     educationQsText: "QS hạng #78 thế giới ngành Khoa học Máy tính & Hệ thống Thông tin (2024)",
     educationQsLinkLabel: "Xem lịch sử xếp hạng QS của ITMO (mở trong tab mới)",
     educationIcpcText: "Ngôi trường đứng sau đội tuyển ACM ICPC vô địch thế giới 7 lần",
     educationIcpcLinkLabel: "Xem thành tích ACM ICPC của ITMO (mở trong tab mới)",
     capabilityLine: "Năng lực kỹ thuật",
     technologyStack: "Công nghệ sử dụng",
-    workKicker: "01 — Chọn lọc",
+    workKicker: "01 - Chọn lọc",
     workTitle: "Hệ thống được kể bằng quyết định và kết quả.",
     workIntro:
       "Không phải danh sách công nghệ. Mỗi phần dưới đây là một vấn đề cần giải bằng kiến trúc, vận hành và sự đánh đổi rõ ràng.",
@@ -176,7 +176,7 @@ const copy = {
     case3Result: "15M bản ghi/ngày",
     case3Detail:
       "Tạo pipeline event-driven cho hơn 50 trạm IoT: Kafka ingestion, claim-check với MinIO, ghi append-only vào Cassandra và cache-aside cho lớp API.",
-    principlesKicker: "02 — Cách làm việc",
+    principlesKicker: "02 - Cách làm việc",
     principlesTitle: "Hệ thống tốt không chỉ chạy được lúc bình thường.",
     principle1Title: "Thiết kế cho lỗi xảy ra.",
     principle1Text: "Xem degradation, retry và idempotency là một phần của luồng chính.",
@@ -184,7 +184,7 @@ const copy = {
     principle2Text: "Bắt đầu bằng latency, saturation và tín hiệu vận hành thay vì trực giác.",
     principle3Title: "Rollout có đường lui.",
     principle3Text: "Dùng quan sát, feature flag và canary để giảm bán kính rủi ro.",
-    recognitionKicker: "03 — Nền tảng",
+    recognitionKicker: "03 - Nền tảng",
     recognitionTitle: "Thành tích thuật toán",
     storiesKicker: "Câu chuyện",
     storiesTitle: "Chuyện bên lề, chuyện đời, chuyện dev.",
@@ -204,8 +204,8 @@ const copy = {
     photosKicker: "Ảnh",
     photosTitle: "Những thứ không thành bài viết.",
     photosIntro:
-      "Ảnh chụp dọc đường, xếp theo tháng, mới nhất ở trên. Nhóm nào có chuyện đáng kể thì có vài dòng ghi chú — không thì để ảnh tự nói.",
-    contactKicker: "04 — Liên hệ",
+      "Ảnh chụp dọc đường, xếp theo tháng, mới nhất ở trên. Nhóm nào có chuyện đáng kể thì có vài dòng ghi chú - không thì để ảnh tự nói.",
+    contactKicker: "04 - Liên hệ",
     contactTitle: "Có bài toán backend khó? Hãy bắt đầu từ kiến trúc.",
     contactEmail: "Gửi email",
     copyEmail: "Sao chép email",
@@ -377,7 +377,7 @@ if (new Date() <= new Date(`${PHOTOS_BADGE_UNTIL}T23:59:59`)) {
   document.querySelector('.primary-nav a[href="photos.html"]')?.classList.add("is-new");
 
   // Màn hẹp gấp cả thanh nav vào sau nút Menu, nên chấm trong đó chẳng ai thấy.
-  // Dựng thêm một lối tắt đứng ngoài, cạnh nút Menu — CSS chỉ cho nó hiện ở khổ hẹp.
+  // Dựng thêm một lối tắt đứng ngoài, cạnh nút Menu - CSS chỉ cho nó hiện ở khổ hẹp.
   const shortcut = document.createElement("a");
   shortcut.className = "nav-shortcut is-new";
   shortcut.href = "photos.html";
@@ -397,7 +397,7 @@ document.addEventListener("site:page", () => {
   trackVisit();
 });
 
-/* Analytics — gửi 1 lượt xem về Cloudflare Worker (worker/src/index.js).
+/* Analytics - gửi 1 lượt xem về Cloudflare Worker (worker/src/index.js).
    Để trống ANALYTICS_ENDPOINT thì toàn bộ khối này không chạy. */
 const trackVisit = (function analytics() {
   const ANALYTICS_ENDPOINT = "https://dtr-analytics.mra2322001-raycast-relay.workers.dev";
@@ -418,7 +418,7 @@ const trackVisit = (function analytics() {
   }
 
   // Fingerprint: hash các đặc điểm trình duyệt. Dùng để nhận ra khách quay lại
-  // ngay cả khi họ xoá localStorage — nhưng Safari/Brave làm nhiễu nên chỉ đúng ~40-60%.
+  // ngay cả khi họ xoá localStorage - nhưng Safari/Brave làm nhiễu nên chỉ đúng ~40-60%.
   // Tính một lần rồi dùng lại, vì router có thể gọi lại nhiều lần trong một phiên.
   let cachedFingerprint = null;
 
