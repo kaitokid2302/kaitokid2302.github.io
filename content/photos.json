@@ -1,5 +1,24 @@
 [
   {
+    "folder": "2021-02-08-chay",
+    "date": "2021-02-08",
+    "note": {
+      "en": "Still young. Hope I can keep running this regularly.",
+      "vi": "Còn trẻ mà, hy vọng sẽ duy trì chạy được thường xuyên như này"
+    },
+    "photos": [
+      {
+        "src": "assets/photos/2021-02-08-chay/01-20210208-174852-original.webp",
+        "w": 1200,
+        "h": 1600,
+        "alt": {
+          "en": "A smartwatch on my wrist showing the run summary: 21.22 km, 2:01:44, 1014 kcal",
+          "vi": "Đồng hồ thông minh trên tay hiện tổng kết buổi chạy: 21,22 km, 2:01:44, 1014 kcal"
+        }
+      }
+    ]
+  },
+  {
     "folder": "2022-02-09-hm",
     "date": "2022-02-09",
     "note": {
