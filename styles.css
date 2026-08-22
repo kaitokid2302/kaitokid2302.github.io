@@ -1592,6 +1592,7 @@ body.has-player .footer {
 }
 
 .group-note {
+  white-space: pre-line;
   max-width: 62ch;
   margin: 0 0 28px;
   font-size: 20px;
