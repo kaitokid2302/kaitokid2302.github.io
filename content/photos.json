@@ -1,5 +1,37 @@
 [
   {
+    "folder": "2022-02-27-neva",
+    "date": "2022-02-27",
+    "note": {
+      "en": "Snow.",
+      "vi": "Tuyết."
+    },
+    "photos": [
+      {
+        "src": "assets/photos/2022-02-27-neva/01-20220227-134653-original-original.webp",
+        "w": 1200,
+        "h": 1600,
+        "alt": {
+          "en": "The frozen Neva seen from a bridge, an embankment road thawing on the left and city blocks on the far bank",
+          "vi": "Sông Neva đóng băng nhìn từ trên cầu, đường ven kè đang tan tuyết bên trái, dãy nhà bờ bên kia"
+        }
+      },
+      {
+        "src": "assets/photos/2022-02-27-neva/02-20220227-133643-original.webp",
+        "w": 1200,
+        "h": 1600,
+        "alt": {
+          "en": "An icy walkway along the embankment, someone in a red jacket cycling toward the camera",
+          "vi": "Lối đi ven kè phủ băng, một người áo khoác đỏ đạp xe ngược lại phía máy ảnh"
+        }
+      }
+    ],
+    "place": {
+      "en": "Saint Petersburg",
+      "vi": "Saint Petersburg"
+    }
+  },
+  {
     "folder": "2020-08-15-krestovsky",
     "date": "2020-08-15",
     "note": {
