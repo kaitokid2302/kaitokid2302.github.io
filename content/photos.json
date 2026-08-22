@@ -8,15 +8,6 @@
     },
     "photos": [
       {
-        "src": "assets/photos/2020-08-15-krestovsky/01-20200815-231759-original.webp",
-        "w": 1200,
-        "h": 1600,
-        "alt": {
-          "en": "Riding a bike down a wide park avenue, white shirt and red trousers, long evening shadows on the asphalt",
-          "vi": "Đạp xe trên đại lộ rộng trong công viên, áo trắng quần đỏ, bóng nắng chiều đổ dài trên mặt đường"
-        }
-      },
-      {
         "src": "assets/photos/2020-08-15-krestovsky/02-20200815-231936-original.webp",
         "w": 1200,
         "h": 1600,
@@ -27,8 +18,8 @@
       }
     ],
     "place": {
-      "en": "Krestovsky Island, Saint Petersburg",
-      "vi": "Đảo Krestovsky, Saint Petersburg"
+      "en": "Saint Petersburg",
+      "vi": "Saint Petersburg"
     }
   },
   {
