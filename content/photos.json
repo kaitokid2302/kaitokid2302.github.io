@@ -1,5 +1,28 @@
 [
   {
+    "folder": "2025-07-25-fantastic-four",
+    "date": "2025-07-25",
+    "note": {
+      "en": "Honestly I like DC more than Marvel, but anyway, F4 was not bad at all.",
+      "vi": "Thực tế là mình thích DC hơn marvel, but anyway, F4 cũng k đến nỗi nào"
+    },
+    "photos": [
+      {
+        "src": "assets/photos/2025-07-25-fantastic-four/01-fantastic-four.webp",
+        "w": 1200,
+        "h": 1600,
+        "alt": {
+          "en": "Standing next to a Fantastic Four standee in a cinema lobby, arms crossed",
+          "vi": "Đứng cạnh standee phim Fantastic Four trong sảnh rạp, khoanh tay"
+        }
+      }
+    ],
+    "place": {
+      "en": "Saigon, Vietnam",
+      "vi": "Sài Gòn"
+    }
+  },
+  {
     "folder": "2025-06-23-tot-nghiep",
     "date": "2025-06-23",
     "note": {
