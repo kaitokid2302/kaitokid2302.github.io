@@ -1,5 +1,28 @@
 [
   {
+    "folder": "2026-07-04-ho-guom",
+    "date": "2026-07-04",
+    "note": {
+      "en": "Hoan Kiem is pretty chill.",
+      "vi": "Hồ Gươm khá chill."
+    },
+    "photos": [
+      {
+        "src": "assets/photos/2026-07-04-ho-guom/01-img-1864.webp",
+        "w": 1200,
+        "h": 1600,
+        "alt": {
+          "en": "Standing with my back to the camera at the edge of Hoan Kiem Lake, an old tree branch overhead and sunset over the water",
+          "vi": "Đứng quay lưng bên bờ Hồ Gươm, cành cây già vắt ngang phía trên, hoàng hôn trên mặt nước"
+        }
+      }
+    ],
+    "place": {
+      "en": "Hoan Kiem Lake, Hanoi",
+      "vi": "Hồ Gươm, Hà Nội"
+    }
+  },
+  {
     "folder": "2026-08-20-loud",
     "date": "2026-08-20",
     "note": {
