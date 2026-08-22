@@ -1,5 +1,28 @@
 [
   {
+    "folder": "2022-02-09-hm",
+    "date": "2022-02-09",
+    "note": {
+      "en": "I like Uniqlo better, but figured I would try another brand for once.",
+      "vi": "Mình thích đồ uniqlo hơn, nhưng thử 1 lần đổi hãng xem"
+    },
+    "photos": [
+      {
+        "src": "assets/photos/2022-02-09-hm/01-20220209-224357-original.webp",
+        "w": 1200,
+        "h": 1600,
+        "alt": {
+          "en": "Carrying an H&M paper bag while walking, the pavement blurred underneath",
+          "vi": "Tay cầm túi giấy H&M vừa đi vừa chụp, mặt đường nhoè phía dưới"
+        }
+      }
+    ],
+    "place": {
+      "en": "Saint Petersburg, Russia",
+      "vi": "Saint Petersburg, Nga"
+    }
+  },
+  {
     "folder": "2025-07-25-fantastic-four",
     "date": "2025-07-25",
     "note": {
