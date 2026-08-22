@@ -1,5 +1,28 @@
 [
   {
+    "folder": "2024-03-24-bua-sang",
+    "date": "2024-03-24",
+    "note": {
+      "en": "Breakfast, always like this.\nI quite like this vibe.",
+      "vi": "Bữa sáng, luôn vậy.\nKhá thích vibe này"
+    },
+    "photos": [
+      {
+        "src": "assets/photos/2024-03-24-bua-sang/01-img-20240324-145920-original.webp",
+        "w": 1200,
+        "h": 1600,
+        "alt": {
+          "en": "A red tray by a cafe window: a slice of chocolate cake, a cinnamon roll and a paper cup of coffee, with a snowy street and scooters outside",
+          "vi": "Khay đỏ bên cửa sổ quán: một miếng bánh chocolate, một cái bánh quế và cốc cà phê giấy, ngoài kia là phố còn tuyết và mấy chiếc xe điện"
+        }
+      }
+    ],
+    "place": {
+      "en": "Saint Petersburg, Russia",
+      "vi": "Saint Petersburg, Nga"
+    }
+  },
+  {
     "folder": "2022-02-27-neva",
     "date": "2022-02-27",
     "note": {
