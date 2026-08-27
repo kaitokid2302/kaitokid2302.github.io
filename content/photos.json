@@ -1,5 +1,24 @@
 [
   {
+    "folder": "2026-06-20-pure-knowledge",
+    "date": "2026-06-20",
+    "note": {
+      "en": "I quite like going to a cafe, chilling, and researching whatever topics I want. Pure knowledge always gives me the biggest dopamine hit - just me =)",
+      "vi": "Khá thích ra quán cà phê, chill chill, và research tất cả những chủ đề mình muốn. Pure knowledge luôn làm mình tiết nhiều dopamine nhất - riêng mình =)"
+    },
+    "photos": [
+      {
+        "src": "assets/photos/2026-06-20-pure-knowledge/01-img-1471.webp",
+        "w": 1200,
+        "h": 1600,
+        "alt": {
+          "en": "A hand holding a stainless steel cup printed with 'KIEN TRI KY LUAT CLUB' beside a dark staircase",
+          "vi": "Tay cầm cốc inox in chữ 'KIÊN TRÌ KỶ LUẬT CLUB' bên cạnh cầu thang tối"
+        }
+      }
+    ]
+  },
+  {
     "folder": "2021-02-08-chay",
     "date": "2021-02-08",
     "note": {
