@@ -72,7 +72,18 @@
       "en": "Most days are ordinary, which makes this the hardest list to pick for.",
       "vi": "Ngày thường thì nhiều nhất, mà lại khó chọn nhạc nhất."
     },
-    "tracks": []
+    "tracks": [
+      {
+        "title": "FLUX (Slowed)",
+        "artist": "LANCELOT",
+        "spotify": "https://open.spotify.com/track/2uG5Gy3mUytNrdN1sHl0B6"
+      },
+      {
+        "title": "PISTA - Slowed",
+        "artist": "LANCELOT",
+        "spotify": "https://open.spotify.com/track/2DX4W17Q5bDX69cxKwWvEz"
+      }
+    ]
   },
   {
     "slug": "bad-days",
