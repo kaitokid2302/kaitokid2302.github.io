@@ -159,7 +159,6 @@ Máy đoán sai thì sửa thẳng `date` trong JSON - script không bao giờ �
 | Field | Bắt buộc | Ý nghĩa |
 |---|---|---|
 | `alt` | **Có** - test fail nếu trống | Tả cái nhìn thấy trong ảnh, cho trình đọc màn hình |
-| `title` | Không | Tiêu đề ngắn song ngữ, hiện in đậm phía trên `note` |
 | `note` | Không | Câu chuyện của nhóm ảnh, hiện phía trên lưới ảnh |
 | `place` | Không | Hiện dưới ngày ở rail bên trái |
 
