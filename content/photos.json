@@ -1,5 +1,33 @@
 [
   {
+    "folder": "2026-09-29-fearless",
+    "date": "2026-09-29",
+    "note": {
+      "en": "I'm not fearless 'cause I'm brave. I'm fearless 'cause I'm broken.",
+      "vi": "I'm not fearless 'cause I'm brave. I'm fearless 'cause I'm broken."
+    },
+    "photos": [
+      {
+        "src": "assets/photos/2026-09-29-fearless/01-img-2481-2.webp",
+        "w": 1200,
+        "h": 1600,
+        "alt": {
+          "en": "A Life Fitness treadmill screen showing workout results: 5.02 km in 32:13, 411 kcal, 6:24 min/km pace",
+          "vi": "Màn hình máy chạy Life Fitness hiện kết quả buổi tập: 5,02 km trong 32:13, 411 kcal, pace 6:24 phút/km"
+        }
+      },
+      {
+        "src": "assets/photos/2026-09-29-fearless/02-img-2482-3.webp",
+        "w": 1200,
+        "h": 1600,
+        "alt": {
+          "en": "Mirror selfie in a big gym - orange tank top, black shorts, white sneakers, rows of cardio machines behind",
+          "vi": "Selfie qua gương trong phòng gym rộng - áo ba lỗ cam, quần đùi đen, giày trắng, phía sau là dãy máy cardio"
+        }
+      }
+    ]
+  },
+  {
     "folder": "2026-06-20-pure-knowledge",
     "date": "2026-06-20",
     "note": {
