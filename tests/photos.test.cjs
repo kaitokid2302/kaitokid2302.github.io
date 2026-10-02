@@ -64,9 +64,10 @@ test("photo index entries are well-formed", () => {
     assert.match(group.date, /^\d{4}-\d{2}-\d{2}$/, `date của "${group.folder}" phải là YYYY-MM-DD`);
     assert.ok(Array.isArray(group.photos) && group.photos.length > 0, `"${group.folder}" không có ảnh`);
 
-    if (group.note) {
+    for (const field of ["title", "note"]) {
+      if (!group[field]) continue;
       for (const language of LANGUAGES) {
-        assert.equal(typeof group.note[language], "string", `note của "${group.folder}" thiếu bản ${language}`);
+        assert.equal(typeof group[field][language], "string", `${field} của "${group.folder}" thiếu bản ${language}`);
       }
     }
   }

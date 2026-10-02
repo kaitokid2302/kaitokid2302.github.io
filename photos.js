@@ -101,6 +101,7 @@ function showStatus(text) {
 }
 
 function groupHtml(group, offset) {
+  const title = pick(group.title);
   const note = pick(group.note);
   const place = pick(group.place);
   const photos = group.photos
@@ -127,6 +128,7 @@ function groupHtml(group, offset) {
         ${place ? `<p class="group-place">${escapeHtml(place)}</p>` : ""}
       </div>
       <div>
+        ${title ? `<h4 class="group-title">${escapeHtml(title)}</h4>` : ""}
         ${note ? `<p class="group-note">${escapeHtml(note)}</p>` : ""}
         <div class="photo-grid${group.photos.length === 1 ? " is-single" : ""}">${photos}</div>
       </div>
