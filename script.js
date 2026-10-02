@@ -404,6 +404,10 @@ const trackVisit = (function analytics() {
 
   if (!ANALYTICS_ENDPOINT || !navigator.sendBeacon) return () => {};
 
+  // Chạy local (python http.server, mở file trực tiếp) thì không đếm, tránh làm bẩn số liệu thật.
+  const LOCAL_HOSTS = ["localhost", "127.0.0.1", "[::1]", ""];
+  if (LOCAL_HOSTS.includes(location.hostname)) return () => {};
+
   // Visitor id: trang tự phát UUID rồi nhớ trong localStorage của khách.
   // Chính xác hơn fingerprint, nhưng mất khi khách xoá dữ liệu duyệt web.
   function visitorId() {
